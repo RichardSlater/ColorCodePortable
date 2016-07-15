@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation.  All rights reserved.
 
-using System.Drawing;
 using ColorCode.Common;
+using ColorCode.Styling;
 
 namespace ColorCode
 {

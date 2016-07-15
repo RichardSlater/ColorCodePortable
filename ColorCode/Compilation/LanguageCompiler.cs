@@ -11,7 +11,7 @@ namespace ColorCode.Compilation
 {
     public class LanguageCompiler : ILanguageCompiler
     {
-        private static readonly Regex numberOfCapturesRegex = new Regex(@"(?x)(?<!(\\|(?!\\)\(\?))\((?!\?)", RegexOptions.Compiled);
+        private static readonly Regex numberOfCapturesRegex = new Regex(@"(?x)(?<!(\\|(?!\\)\(\?))\((?!\?)", Compiled());
         private readonly Dictionary<string, CompiledLanguage> compiledLanguages;
         private readonly ReaderWriterLockSlim compileLock;
 
@@ -78,6 +78,16 @@ namespace ColorCode.Compilation
             }
 
             return compiledLanguage;
+        }
+
+        private static RegexOptions Compiled()
+        {
+            RegexOptions compiledOption;
+            if (Enum.TryParse("Compiled", out compiledOption))
+            {
+                return compiledOption;
+            }
+            return RegexOptions.None;
         }
 
         private static CompiledLanguage CompileLanguage(ILanguage language)

@@ -1,9 +1,7 @@
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Web;
 using ColorCode.Common;
 using ColorCode.Parsing;
 using ColorCode.Styling;

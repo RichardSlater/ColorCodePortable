@@ -1,13 +1,12 @@
 ﻿// Copyright (c) Microsoft Corporation.  All rights reserved.
 
-using System.Drawing;
 using ColorCode.Common;
 
 namespace ColorCode.Styling.StyleSheets
 {
     public class DefaultStyleSheet : IStyleSheet
     {
-        public static readonly Color DullRed = Color.FromArgb(163, 21, 21);
+        private static readonly Color DullRed = new Color(163, 21, 21);
         private static readonly StyleDictionary styles;
 
         static DefaultStyleSheet()
@@ -232,7 +231,7 @@ namespace ColorCode.Styling.StyleSheets
 
                              new Style(ScopeName.MarkdownHeader)
                                 {
-                                    // Foreground = Color.Blue,
+                                    // Foreground = Color.Bluelue,
                                     Bold = true,
                                     CssClassName = "markdownHeader"
                                 },

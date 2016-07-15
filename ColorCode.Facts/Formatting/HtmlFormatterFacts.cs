@@ -12,6 +12,8 @@ namespace ColorCode.Formatting
 {
     public class HtmlFormatter_Class_Facts
     {
+        private static readonly Color DullRed = new Color(163, 21, 21);
+
         public class WriterHeader_Method_Facts
         {
             [Fact]
@@ -130,7 +132,7 @@ namespace ColorCode.Formatting
                     Styles__getValue = new StyleDictionary
                                        {
                                            new Style(ScopeName.Keyword) { Foreground = Color.Blue },
-                                           new Style(ScopeName.String) { Foreground = DefaultStyleSheet.DullRed }
+                                           new Style(ScopeName.String) { Foreground = DullRed }
                                        }
                 };
                 StubTextWriter stubTextWriter = new StubTextWriter();
@@ -152,7 +154,7 @@ namespace ColorCode.Formatting
                 StubStyleSheet stubStyleSheet = new StubStyleSheet
                 {
                     Name__getValue = "fnord",
-                    Styles__getValue = new StyleDictionary { new Style(ScopeName.String) { Foreground = DefaultStyleSheet.DullRed } }
+                    Styles__getValue = new StyleDictionary { new Style(ScopeName.String) { Foreground = DullRed } }
                 };
                 StubTextWriter stubTextWriter = new StubTextWriter();
                 List<Scope> scopes = new List<Scope> { new Scope(ScopeName.String, 0, 10) };
@@ -171,7 +173,7 @@ namespace ColorCode.Formatting
                     Name__getValue = "fnord",
                     Styles__getValue = new StyleDictionary
                                        {
-                                           new Style(ScopeName.String) { Foreground = DefaultStyleSheet.DullRed },
+                                           new Style(ScopeName.String) { Foreground = DullRed },
                                            new Style(ScopeName.HtmlEntity) { Foreground = Color.Red }
                                        }
                 };

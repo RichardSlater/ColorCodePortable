@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using ColorCode.Common;
+using ColorCode.Styling;
 using Xunit;
 
 namespace ColorCode.Common
@@ -73,7 +74,7 @@ namespace ColorCode.Common
             {
                 // no arrange
 
-                string actual = Color.FromArgb(0, 0, 0).ToHtmlColor();
+                string actual = (new Color(0, 0, 0)).ToHtmlColor();
 
                 Assert.Equal("#000000", actual);
             }
@@ -84,6 +85,14 @@ namespace ColorCode.Common
                 // no arrange
 
                 Assert.Throws<ArgumentException>(() => Color.Empty.ToHtmlColor());
+            }
+
+            [Fact]
+            public void WillThrowForNullColor()
+            {
+                // no arrange
+
+                Assert.Throws<ArgumentException>(() => ((Color)null).ToHtmlColor());
             }
         }
     }
