@@ -5,3 +5,4 @@ glob:BuildResults.xml
 relre:ColorCode\.AcceptanceTests.+\.actual\..+
 relre:.+xunit\.results\.xml
 relre:.+\.csproj\.user
+relre:.vs
