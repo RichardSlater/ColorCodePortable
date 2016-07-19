@@ -44,7 +44,7 @@
 	</Target>
 
 	<Target Name="archive">
-		<CreateItem Include="ColorCode\bin\Debug\ColorCode.dll;ColorCode\bin\Debug\ColorCode.pdb;ColorCode\bin\Debug\ColorCode.xml">
+		<CreateItem Include="ColorCode\bin\Debug\ColorCode.dll;ColorCode\bin\Debug\ColorCode.pdb">
 			<Output TaskParameter="Include" ItemName="DebugFilesToArchive"/>
 		</CreateItem>
     <CreateItem Include="ColorCode\bin\Release\ColorCode.dll;ColorCode\bin\Release\ColorCode.pdb">

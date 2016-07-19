@@ -5,6 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7333FE4-B5FB-463E-A1DF-7B95405AE755}"
 	ProjectSection(SolutionItems) = preProject
+		build.bat = build.bat
 		ColorCode.msbuild = ColorCode.msbuild
 		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
 	EndProjectSection
