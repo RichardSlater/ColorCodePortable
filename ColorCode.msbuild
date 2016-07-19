@@ -43,17 +43,19 @@
 		<RegexReplace Pattern='AssemblyInformationalVersion\("(\d+\.\d+\.\d+)\.\d+"\)' Replacement='AssemblyVersion("$1.$(BuildNumber)")' Files='GlobalAssemblyInfo.cs'/>
 	</Target>
 
-	<Target Name="archive">
+  <Target Name="clean-archive">
+    <RemoveDir Directories="Output"/>
+  </Target>
+    
+	<Target Name="archive" DependsOnTargets="clean-archive;compile">
 		<CreateItem Include="ColorCode\bin\Debug\ColorCode.dll;ColorCode\bin\Debug\ColorCode.pdb">
 			<Output TaskParameter="Include" ItemName="DebugFilesToArchive"/>
 		</CreateItem>
     <CreateItem Include="ColorCode\bin\Release\ColorCode.dll;ColorCode\bin\Release\ColorCode.pdb">
       <Output TaskParameter="Include" ItemName="ReleaseFilesToArchive"/>
     </CreateItem>
-		<Delete Files="ColorCode\bin\Debug\ColorCode-*.debug.zip"/>
-		<Zip ZipFileName="ColorCode\bin\Debug\ColorCode-$(BuildNumber).debug.zip" Files="@(DebugFilesToArchive)" StripPath="true"/>
-    <Delete Files="ColorCode\bin\Release\ColorCode-*.release.zip"/>
-    <Zip ZipFileName="ColorCode\bin\Release\ColorCode-$(BuildNumber).release.zip" Files="@(ReleaseFilesToArchive)" StripPath="true"/>
+		<Zip ZipFileName="Output\ColorCode-$(BuildNumber).debug.zip" Files="@(DebugFilesToArchive)" StripPath="true"/>
+    <Zip ZipFileName="Output\ColorCode-$(BuildNumber).release.zip" Files="@(ReleaseFilesToArchive)" StripPath="true"/>
 	</Target>
 
 	<Target Name="ci" DependsOnTargets="set-version;all;archive" />
