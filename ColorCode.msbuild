@@ -48,6 +48,7 @@
   </Target>
     
 	<Target Name="archive" DependsOnTargets="clean-archive;compile">
+    <MakeDir Directories="Output" />
 		<CreateItem Include="ColorCode\bin\Debug\ColorCode.dll;ColorCode\bin\Debug\ColorCode.pdb">
 			<Output TaskParameter="Include" ItemName="DebugFilesToArchive"/>
 		</CreateItem>
