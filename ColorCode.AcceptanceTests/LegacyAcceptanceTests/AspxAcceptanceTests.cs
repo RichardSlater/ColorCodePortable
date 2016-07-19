@@ -41,7 +41,7 @@ control skin per control type is allowed in the same theme.
 DefaultStyleSheet skin template. The following skins are provided as examples only.
 
 1. Named control skin. The SkinId should be uniquely defined because
-duplicate SkinId's per control type are not allowed in the same theme.
+duplicate SkinId&#39;s per control type are not allowed in the same theme.
 
 &lt;asp:GridView runat=&quot;server&quot; SkinId=&quot;gridviewSkin&quot; BackColor=&quot;White&quot; &gt;
 &lt;AlternatingRowStyle BackColor=&quot;Blue&quot; /&gt;

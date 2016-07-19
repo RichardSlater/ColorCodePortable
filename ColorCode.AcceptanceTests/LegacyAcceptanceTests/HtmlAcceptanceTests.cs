@@ -226,7 +226,7 @@ namespace ColorCode
         [Fact]
         public void TransformWillStyleLargeHtmlIn1SecondOrLess()
         {
-            string appPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string appPath = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath);
             
             string source = File.ReadAllText(Path.Combine(appPath, @"..\..\LegacyAcceptanceTests\large.html"));
             

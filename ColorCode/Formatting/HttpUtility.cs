@@ -2,7 +2,7 @@
 
 namespace ColorCode.Formatting
 {
-    public class HttpUtility
+    public static class HttpUtility
     {
         public static string HtmlEncode(string value)
         {
