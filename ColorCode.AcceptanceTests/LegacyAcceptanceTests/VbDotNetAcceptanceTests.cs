@@ -58,7 +58,7 @@ namespace ColorCode
 @"''' <summary>";
             string expected =
 @"<div style=""color:Black;background-color:White;""><pre>
-<span style=""color:Green;"">''' &lt;summary&gt;</span>
+<span style=""color:Green;"">&#39;&#39;&#39; &lt;summary&gt;</span>
 </pre></div>";
 
             string actual = new CodeColorizer().Colorize(source, Languages.VbDotNet);
@@ -73,7 +73,7 @@ namespace ColorCode
 @"' this is a comment";
             string expected =
 @"<div style=""color:Black;background-color:White;""><pre>
-<span style=""color:Green;"">' this is a comment</span>
+<span style=""color:Green;"">&#39; this is a comment</span>
 </pre></div>";
 
             string actual = new CodeColorizer().Colorize(source, Languages.VbDotNet);
@@ -352,7 +352,7 @@ System.Object
             string expected =
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">#Region</span> <span style=""color:#A31515;"">&quot;A comment&quot;</span>
-<span style=""color:Green;"">' this is a comment</span>
+<span style=""color:Green;"">&#39; this is a comment</span>
 <span style=""color:Blue;"">#End Region</span>
 <span style=""color:Blue;"">#If</span>
 <span style=""color:Blue;"">#Else</span>
@@ -397,26 +397,26 @@ End Class";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">Sub</span> TestEvents()
     <span style=""color:Blue;"">Dim</span> Obj <span style=""color:Blue;"">As</span> <span style=""color:Blue;"">New</span> Class1
-    <span style=""color:Green;"">' Associate an event handler with an event.</span>
+    <span style=""color:Green;"">&#39; Associate an event handler with an event.</span>
     <span style=""color:Blue;"">AddHandler</span> Obj.Ev_Event, <span style=""color:Blue;"">AddressOf</span> EventHandler
-    <span style=""color:Green;"">' Call the method to raise the event.</span>
+    <span style=""color:Green;"">&#39; Call the method to raise the event.</span>
     Obj.CauseSomeEvent()
-    <span style=""color:Green;"">' Stop handling events.</span>
+    <span style=""color:Green;"">&#39; Stop handling events.</span>
     <span style=""color:Blue;"">RemoveHandler</span> Obj.Ev_Event, <span style=""color:Blue;"">AddressOf</span> EventHandler
-    <span style=""color:Green;"">' This event will not be handled.</span>
+    <span style=""color:Green;"">&#39; This event will not be handled.</span>
     Obj.CauseSomeEvent()
 <span style=""color:Blue;"">End</span> <span style=""color:Blue;"">Sub</span>
 
 <span style=""color:Blue;"">Sub</span> EventHandler()
-    <span style=""color:Green;"">' Handle the event.</span>
+    <span style=""color:Green;"">&#39; Handle the event.</span>
     MsgBox(<span style=""color:#A31515;"">&quot;EventHandler caught event.&quot;</span>)
 <span style=""color:Blue;"">End</span> <span style=""color:Blue;"">Sub</span>
 
 <span style=""color:Blue;"">Public</span> <span style=""color:Blue;"">Class</span> Class1
-    <span style=""color:Green;"">' Declare an event.</span>
+    <span style=""color:Green;"">&#39; Declare an event.</span>
     <span style=""color:Blue;"">Public</span> <span style=""color:Blue;"">Event</span> Ev_Event()
     <span style=""color:Blue;"">Sub</span> CauseSomeEvent()
-        <span style=""color:Green;"">' Raise an event.</span>
+        <span style=""color:Green;"">&#39; Raise an event.</span>
         <span style=""color:Blue;"">RaiseEvent</span> Ev_Event()
     <span style=""color:Blue;"">End</span> <span style=""color:Blue;"">Sub</span>
 <span style=""color:Blue;"">End</span> <span style=""color:Blue;"">Class</span>
@@ -440,9 +440,9 @@ REM This entire line is a comment.
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">Dim</span> demoStr1, demoStr2 <span style=""color:Blue;"">As</span> <span style=""color:Blue;"">String</span>
 demoStr1 = <span style=""color:#A31515;"">&quot;Hello&quot;</span> <span style=""color:Green;"">REM Comment after a statement using REM.</span>
-demoStr2 = <span style=""color:#A31515;"">&quot;Goodbye&quot;</span> <span style=""color:Green;"">' Comment after a statement using the ' character.</span>
+demoStr2 = <span style=""color:#A31515;"">&quot;Goodbye&quot;</span> <span style=""color:Green;"">&#39; Comment after a statement using the &#39; character.</span>
 <span style=""color:Green;"">REM This entire line is a comment.</span>
-<span style=""color:Green;"">' This entire line is also a comment.</span>
+<span style=""color:Green;"">&#39; This entire line is also a comment.</span>
 </pre></div>";
 
             string actual = new CodeColorizer().Colorize(source, Languages.VbDotNet);

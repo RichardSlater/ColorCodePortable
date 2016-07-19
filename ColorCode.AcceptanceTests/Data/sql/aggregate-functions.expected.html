@@ -68,7 +68,7 @@ GO
 GO
 <span style="color:Blue;">SELECT</span> Color, <span style="color:Magenta;">SUM</span>(ListPrice), <span style="color:Magenta;">SUM</span>(StandardCost)
 <span style="color:Blue;">FROM</span> Production.Product
-<span style="color:Blue;">WHERE</span> Color <span style="color:Blue;">IS</span> <span style="color:Blue;">NOT</span> <span style="color:Blue;">NULL</span> <span style="color:Blue;">AND</span> ListPrice != 0.00 <span style="color:Blue;">AND</span> StyleName <span style="color:Blue;">LIKE</span> <span style="color:#A31515;">'Mountain%'</span>
+<span style="color:Blue;">WHERE</span> Color <span style="color:Blue;">IS</span> <span style="color:Blue;">NOT</span> <span style="color:Blue;">NULL</span> <span style="color:Blue;">AND</span> ListPrice != 0.00 <span style="color:Blue;">AND</span> StyleName <span style="color:Blue;">LIKE</span> <span style="color:#A31515;">&#39;Mountain%&#39;</span>
 <span style="color:Blue;">GROUP</span> <span style="color:Blue;">BY</span> Color
 <span style="color:Blue;">ORDER</span> <span style="color:Blue;">BY</span> Color;
 GO
@@ -77,7 +77,7 @@ GO
 GO
 <span style="color:Blue;">SELECT</span> Color, ListPrice, StandardCost
 <span style="color:Blue;">FROM</span> Production.Product
-<span style="color:Blue;">WHERE</span> Color <span style="color:Blue;">IS</span> <span style="color:Blue;">NOT</span> <span style="color:Blue;">NULL</span> <span style="color:Blue;">AND</span> ListPrice != 0.00 <span style="color:Blue;">AND</span> StyleName <span style="color:Blue;">LIKE</span> <span style="color:#A31515;">'Mountain%'</span>
+<span style="color:Blue;">WHERE</span> Color <span style="color:Blue;">IS</span> <span style="color:Blue;">NOT</span> <span style="color:Blue;">NULL</span> <span style="color:Blue;">AND</span> ListPrice != 0.00 <span style="color:Blue;">AND</span> StyleName <span style="color:Blue;">LIKE</span> <span style="color:#A31515;">&#39;Mountain%&#39;</span>
 <span style="color:Blue;">ORDER</span> <span style="color:Blue;">BY</span> Color
 <span style="color:Blue;">COMPUTE</span> <span style="color:Magenta;">SUM</span>(ListPrice), <span style="color:Magenta;">SUM</span>(StandardCost) <span style="color:Blue;">BY</span> Color;
 GO
@@ -92,7 +92,7 @@ GO
 
 <span style="color:Blue;">USE</span> AdventureWorks;
 GO
-<span style="color:Blue;">SELECT</span> SalesQuota, <span style="color:Magenta;">SUM</span>(SalesYTD) <span style="color:#A31515;">'TotalSalesYTD'</span>, <span style="color:Magenta;">GROUPING</span>(SalesQuota) <span style="color:Blue;">AS</span> <span style="color:#A31515;">'Grouping'</span>
+<span style="color:Blue;">SELECT</span> SalesQuota, <span style="color:Magenta;">SUM</span>(SalesYTD) <span style="color:#A31515;">&#39;TotalSalesYTD&#39;</span>, <span style="color:Magenta;">GROUPING</span>(SalesQuota) <span style="color:Blue;">AS</span> <span style="color:#A31515;">&#39;Grouping&#39;</span>
 <span style="color:Blue;">FROM</span> Sales.SalesPerson
 <span style="color:Blue;">GROUP</span> <span style="color:Blue;">BY</span> SalesQuota <span style="color:Blue;">WITH</span> <span style="color:Blue;">ROLLUP</span>;
 GO

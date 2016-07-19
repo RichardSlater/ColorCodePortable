@@ -30,8 +30,8 @@ GO
     c2 <span style=""color:Blue;"">nvarchar</span>(40)
     );
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">COL_LENGTH</span>(<span style=""color:#A31515;"">'t1'</span>,<span style=""color:#A31515;"">'c1'</span>)<span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'VarChar'</span>,
-    <span style=""color:Blue;"">COL_LENGTH</span>(<span style=""color:#A31515;"">'t1'</span>,<span style=""color:#A31515;"">'c2'</span>)<span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'NVarChar'</span>;
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">COL_LENGTH</span>(<span style=""color:#A31515;"">&#39;t1&#39;</span>,<span style=""color:#A31515;"">&#39;c1&#39;</span>)<span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;VarChar&#39;</span>,
+    <span style=""color:Blue;"">COL_LENGTH</span>(<span style=""color:#A31515;"">&#39;t1&#39;</span>,<span style=""color:#A31515;"">&#39;c2&#39;</span>)<span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;NVarChar&#39;</span>;
 GO
 <span style=""color:Blue;"">DROP</span> <span style=""color:Blue;"">TABLE</span> t1;
 </pre></div>";
@@ -57,7 +57,7 @@ GO";
 GO
 <span style=""color:Blue;"">SET</span> <span style=""color:Blue;"">NOCOUNT</span> <span style=""color:Blue;"">OFF</span>;
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">COL_NAME</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">'HumanResources.Employee'</span>), 1) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'Column StyleName'</span>;
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">COL_NAME</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">&#39;HumanResources.Employee&#39;</span>), 1) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;Column StyleName&#39;</span>;
 GO
 </pre></div>";
 
@@ -78,7 +78,7 @@ GO";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">COLUMNPROPERTY</span>( <span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">'Person.Contact'</span>),<span style=""color:#A31515;"">'LastName'</span>,<span style=""color:#A31515;"">'PRECISION'</span>)<span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'Column Length'</span>;
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">COLUMNPROPERTY</span>( <span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">&#39;Person.Contact&#39;</span>),<span style=""color:#A31515;"">&#39;LastName&#39;</span>,<span style=""color:#A31515;"">&#39;PRECISION&#39;</span>)<span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;Column Length&#39;</span>;
 GO
 </pre></div>";
 
@@ -98,7 +98,7 @@ SELECT DATABASEPROPERTY('master', 'IsTruncLog');";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">USE</span> master;
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">DATABASEPROPERTY</span>(<span style=""color:#A31515;"">'master'</span>, <span style=""color:#A31515;"">'IsTruncLog'</span>);
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">DATABASEPROPERTY</span>(<span style=""color:#A31515;"">&#39;master&#39;</span>, <span style=""color:#A31515;"">&#39;IsTruncLog&#39;</span>);
 </pre></div>";
 
                 string actual = new CodeColorizer().Colorize(sourceText, Languages.Sql);
@@ -138,20 +138,20 @@ GO";
 <span style=""color:Blue;"">SELECT</span> <span style=""color:Magenta;"">DB_ID</span>() <span style=""color:Blue;"">AS</span> [Database ID];
 GO
 
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Magenta;"">DB_ID</span>(N<span style=""color:#A31515;"">'AdventureWorks'</span>) <span style=""color:Blue;"">AS</span> [Database ID];
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Magenta;"">DB_ID</span>(N<span style=""color:#A31515;"">&#39;AdventureWorks&#39;</span>) <span style=""color:Blue;"">AS</span> [Database ID];
 GO
 
 <span style=""color:Blue;"">DECLARE</span> @db_id <span style=""color:Blue;"">smallint</span>;
 <span style=""color:Blue;"">DECLARE</span> @object_id <span style=""color:Blue;"">int</span>;
-<span style=""color:Blue;"">SET</span> @db_id = <span style=""color:Magenta;"">DB_ID</span>(N<span style=""color:#A31515;"">'AdventureWorks'</span>);
-<span style=""color:Blue;"">SET</span> @object_id = <span style=""color:Blue;"">OBJECT_ID</span>(N<span style=""color:#A31515;"">'AdventureWorks.Person.Address'</span>);
+<span style=""color:Blue;"">SET</span> @db_id = <span style=""color:Magenta;"">DB_ID</span>(N<span style=""color:#A31515;"">&#39;AdventureWorks&#39;</span>);
+<span style=""color:Blue;"">SET</span> @object_id = <span style=""color:Blue;"">OBJECT_ID</span>(N<span style=""color:#A31515;"">&#39;AdventureWorks.Person.Address&#39;</span>);
 <span style=""color:Blue;"">IF</span> @db_id <span style=""color:Blue;"">IS</span> <span style=""color:Blue;"">NULL</span> 
     <span style=""color:Blue;"">BEGIN</span>;
-        <span style=""color:Blue;"">PRINT</span> N<span style=""color:#A31515;"">'Invalid database'</span>;
+        <span style=""color:Blue;"">PRINT</span> N<span style=""color:#A31515;"">&#39;Invalid database&#39;</span>;
     <span style=""color:Blue;"">END</span>;
 <span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> @object_id <span style=""color:Blue;"">IS</span> <span style=""color:Blue;"">NULL</span>
     <span style=""color:Blue;"">BEGIN</span>;
-        <span style=""color:Blue;"">PRINT</span> N<span style=""color:#A31515;"">'Invalid object'</span>;
+        <span style=""color:Blue;"">PRINT</span> N<span style=""color:#A31515;"">&#39;Invalid object&#39;</span>;
     <span style=""color:Blue;"">END</span>;
 <span style=""color:Blue;"">ELSE</span>
     <span style=""color:Blue;"">BEGIN</span>;
@@ -204,7 +204,7 @@ GO";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">FILE_ID</span>(<span style=""color:#A31515;"">'AdventureWorks_Data'</span>)<span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'File ID'</span>;
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">FILE_ID</span>(<span style=""color:#A31515;"">&#39;AdventureWorks_Data&#39;</span>)<span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;File ID&#39;</span>;
 GO
 </pre></div>";
 
@@ -225,7 +225,7 @@ GO";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">FILE_NAME</span>(1) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'File StyleName 1'</span>, <span style=""color:Blue;"">FILE_NAME</span>(2) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'File StyleName 2'</span>;
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">FILE_NAME</span>(1) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;File StyleName 1&#39;</span>, <span style=""color:Blue;"">FILE_NAME</span>(2) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;File StyleName 2&#39;</span>;
 GO
 </pre></div>";
 
@@ -246,7 +246,7 @@ GO";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">FILEGROUP_ID</span>(<span style=""color:#A31515;"">'PRIMARY'</span>) <span style=""color:Blue;"">AS</span> [Filegroup ID];
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">FILEGROUP_ID</span>(<span style=""color:#A31515;"">&#39;PRIMARY&#39;</span>) <span style=""color:Blue;"">AS</span> [Filegroup ID];
 GO
 </pre></div>";
 
@@ -288,7 +288,7 @@ GO";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">FILEGROUPPROPERTY</span>(<span style=""color:#A31515;"">'PRIMARY'</span>, <span style=""color:#A31515;"">'IsDefault'</span>) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'DefaultStyleSheet Filegroup'</span>;
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">FILEGROUPPROPERTY</span>(<span style=""color:#A31515;"">&#39;PRIMARY&#39;</span>, <span style=""color:#A31515;"">&#39;IsDefault&#39;</span>) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;DefaultStyleSheet Filegroup&#39;</span>;
 GO
 </pre></div>";
 
@@ -309,7 +309,7 @@ GO";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">FILEPROPERTY</span>(<span style=""color:#A31515;"">'AdventureWorks_Data'</span>, <span style=""color:#A31515;"">'IsPrimaryFile'</span>)<span style=""color:Blue;"">AS</span> [Primary File];
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">FILEPROPERTY</span>(<span style=""color:#A31515;"">&#39;AdventureWorks_Data&#39;</span>, <span style=""color:#A31515;"">&#39;IsPrimaryFile&#39;</span>)<span style=""color:Blue;"">AS</span> [Primary File];
 GO
 </pre></div>";
 
@@ -330,7 +330,7 @@ GO";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">fulltextcatalogproperty</span>(<span style=""color:#A31515;"">'Cat_Desc'</span>, <span style=""color:#A31515;"">'ItemCount'</span>);
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">fulltextcatalogproperty</span>(<span style=""color:#A31515;"">&#39;Cat_Desc&#39;</span>, <span style=""color:#A31515;"">&#39;ItemCount&#39;</span>);
 GO
 </pre></div>";
 
@@ -346,7 +346,7 @@ GO
 @"SELECT fulltextserviceproperty('IsFulltextInstalled')";
                 string expected =
 @"<div style=""color:Black;background-color:White;""><pre>
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">fulltextserviceproperty</span>(<span style=""color:#A31515;"">'IsFulltextInstalled'</span>)
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">fulltextserviceproperty</span>(<span style=""color:#A31515;"">&#39;IsFulltextInstalled&#39;</span>)
 </pre></div>";
 
                 string actual = new CodeColorizer().Colorize(sourceText, Languages.Sql);
@@ -372,9 +372,9 @@ GO";
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
 <span style=""color:Blue;"">SELECT</span> 
-    <span style=""color:Blue;"">INDEX_COL</span> (N<span style=""color:#A31515;"">'AdventureWorks.Sales.SalesOrderDetail'</span>, 1,1) <span style=""color:Blue;"">AS</span>
+    <span style=""color:Blue;"">INDEX_COL</span> (N<span style=""color:#A31515;"">&#39;AdventureWorks.Sales.SalesOrderDetail&#39;</span>, 1,1) <span style=""color:Blue;"">AS</span>
         [CaptureIndex Column 1], 
-    <span style=""color:Blue;"">INDEX_COL</span> (N<span style=""color:#A31515;"">'AdventureWorks.Sales.SalesOrderDetail'</span>, 1,2) <span style=""color:Blue;"">AS</span>
+    <span style=""color:Blue;"">INDEX_COL</span> (N<span style=""color:#A31515;"">&#39;AdventureWorks.Sales.SalesOrderDetail&#39;</span>, 1,2) <span style=""color:Blue;"">AS</span>
         [CaptureIndex Column 2]
 ;
 GO
@@ -401,10 +401,10 @@ SELECT
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
 <span style=""color:Blue;"">SELECT</span> 
-    <span style=""color:Blue;"">INDEXKEY_PROPERTY</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">'Production.Location'</span>, <span style=""color:#A31515;"">'U'</span>),
-        1,1,<span style=""color:#A31515;"">'ColumnId'</span>) <span style=""color:Blue;"">AS</span> [Column ID],
-    <span style=""color:Blue;"">INDEXKEY_PROPERTY</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">'Production.Location'</span>, <span style=""color:#A31515;"">'U'</span>),
-        1,1,<span style=""color:#A31515;"">'IsDescending'</span>) <span style=""color:Blue;"">AS</span> [Asc or Desc order];
+    <span style=""color:Blue;"">INDEXKEY_PROPERTY</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">&#39;Production.Location&#39;</span>, <span style=""color:#A31515;"">&#39;U&#39;</span>),
+        1,1,<span style=""color:#A31515;"">&#39;ColumnId&#39;</span>) <span style=""color:Blue;"">AS</span> [Column ID],
+    <span style=""color:Blue;"">INDEXKEY_PROPERTY</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">&#39;Production.Location&#39;</span>, <span style=""color:#A31515;"">&#39;U&#39;</span>),
+        1,1,<span style=""color:#A31515;"">&#39;IsDescending&#39;</span>) <span style=""color:Blue;"">AS</span> [Asc or Desc order];
 </pre></div>";
 
                 string actual = new CodeColorizer().Colorize(sourceText, Languages.Sql);
@@ -431,12 +431,12 @@ GO";
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
 <span style=""color:Blue;"">SELECT</span> 
-    <span style=""color:Blue;"">INDEXPROPERTY</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">'HumanResources.Employee'</span>),
-        <span style=""color:#A31515;"">'PK_Employee_EmployeeID'</span>,<span style=""color:#A31515;"">'IsClustered'</span>)<span style=""color:Blue;"">AS</span> [Is Clustered],
-    <span style=""color:Blue;"">INDEXPROPERTY</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">'HumanResources.Employee'</span>),
-        <span style=""color:#A31515;"">'PK_Employee_EmployeeID'</span>,<span style=""color:#A31515;"">'IndexDepth'</span>) <span style=""color:Blue;"">AS</span> [CaptureIndex Depth],
-    <span style=""color:Blue;"">INDEXPROPERTY</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">'HumanResources.Employee'</span>),
-        <span style=""color:#A31515;"">'PK_Employee_EmployeeID'</span>,<span style=""color:#A31515;"">'IndexFillFactor'</span>) <span style=""color:Blue;"">AS</span> [Fill Factor];
+    <span style=""color:Blue;"">INDEXPROPERTY</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">&#39;HumanResources.Employee&#39;</span>),
+        <span style=""color:#A31515;"">&#39;PK_Employee_EmployeeID&#39;</span>,<span style=""color:#A31515;"">&#39;IsClustered&#39;</span>)<span style=""color:Blue;"">AS</span> [Is Clustered],
+    <span style=""color:Blue;"">INDEXPROPERTY</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">&#39;HumanResources.Employee&#39;</span>),
+        <span style=""color:#A31515;"">&#39;PK_Employee_EmployeeID&#39;</span>,<span style=""color:#A31515;"">&#39;IndexDepth&#39;</span>) <span style=""color:Blue;"">AS</span> [CaptureIndex Depth],
+    <span style=""color:Blue;"">INDEXPROPERTY</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">&#39;HumanResources.Employee&#39;</span>),
+        <span style=""color:#A31515;"">&#39;PK_Employee_EmployeeID&#39;</span>,<span style=""color:#A31515;"">&#39;IndexFillFactor&#39;</span>) <span style=""color:Blue;"">AS</span> [Fill Factor];
 GO
 </pre></div>";
 
@@ -481,26 +481,26 @@ GO";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">USE</span> master;
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">OBJECT_ID</span>(N<span style=""color:#A31515;"">'AdventureWorks.Production.WorkOrder'</span>) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'Object ID'</span>;
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">OBJECT_ID</span>(N<span style=""color:#A31515;"">&#39;AdventureWorks.Production.WorkOrder&#39;</span>) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;Object ID&#39;</span>;
 GO
 
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
-<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">OBJECT_ID</span> (N<span style=""color:#A31515;"">'dbo.AWBuildVersion'</span>, N<span style=""color:#A31515;"">'U'</span>) <span style=""color:Blue;"">IS</span> <span style=""color:Blue;"">NOT</span> <span style=""color:Blue;"">NULL</span>
+<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">OBJECT_ID</span> (N<span style=""color:#A31515;"">&#39;dbo.AWBuildVersion&#39;</span>, N<span style=""color:#A31515;"">&#39;U&#39;</span>) <span style=""color:Blue;"">IS</span> <span style=""color:Blue;"">NOT</span> <span style=""color:Blue;"">NULL</span>
 <span style=""color:Blue;"">DROP</span> <span style=""color:Blue;"">TABLE</span> dbo.AWBuildVersion;
 GO
 
 <span style=""color:Blue;"">DECLARE</span> @db_id <span style=""color:Blue;"">smallint</span>;
 <span style=""color:Blue;"">DECLARE</span> @object_id <span style=""color:Blue;"">int</span>;
-<span style=""color:Blue;"">SET</span> @db_id = <span style=""color:Magenta;"">DB_ID</span>(N<span style=""color:#A31515;"">'AdventureWorks'</span>);
-<span style=""color:Blue;"">SET</span> @object_id = <span style=""color:Blue;"">OBJECT_ID</span>(N<span style=""color:#A31515;"">'AdventureWorks.Person.Address'</span>);
+<span style=""color:Blue;"">SET</span> @db_id = <span style=""color:Magenta;"">DB_ID</span>(N<span style=""color:#A31515;"">&#39;AdventureWorks&#39;</span>);
+<span style=""color:Blue;"">SET</span> @object_id = <span style=""color:Blue;"">OBJECT_ID</span>(N<span style=""color:#A31515;"">&#39;AdventureWorks.Person.Address&#39;</span>);
 <span style=""color:Blue;"">IF</span> @db_id <span style=""color:Blue;"">IS</span> <span style=""color:Blue;"">NULL</span> 
     <span style=""color:Blue;"">BEGIN</span>;
-        <span style=""color:Blue;"">PRINT</span> N<span style=""color:#A31515;"">'Invalid database'</span>;
+        <span style=""color:Blue;"">PRINT</span> N<span style=""color:#A31515;"">&#39;Invalid database&#39;</span>;
     <span style=""color:Blue;"">END</span>;
 <span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> @object_id <span style=""color:Blue;"">IS</span> <span style=""color:Blue;"">NULL</span>
     <span style=""color:Blue;"">BEGIN</span>;
-        <span style=""color:Blue;"">PRINT</span> N<span style=""color:#A31515;"">'Invalid object'</span>;
+        <span style=""color:Blue;"">PRINT</span> N<span style=""color:#A31515;"">&#39;Invalid object&#39;</span>;
     <span style=""color:Blue;"">END</span>;
 <span style=""color:Blue;"">ELSE</span>
     <span style=""color:Blue;"">BEGIN</span>;
@@ -567,24 +567,24 @@ GO";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
-<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">OBJECTPROPERTY</span> (<span style=""color:Blue;"">OBJECT_ID</span>(N<span style=""color:#A31515;"">'Production.UnitMeasure'</span>),<span style=""color:#A31515;"">'ISTABLE'</span>) = 1
-    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">'UnitMeasure is a table.'</span>
-<span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">OBJECTPROPERTY</span> (<span style=""color:Blue;"">OBJECT_ID</span>(N<span style=""color:#A31515;"">'Production.UnitMeasure'</span>),<span style=""color:#A31515;"">'ISTABLE'</span>) = 0
-    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">'UnitMeasure is not a table.'</span>
-<span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">OBJECTPROPERTY</span> (<span style=""color:Blue;"">OBJECT_ID</span>(N<span style=""color:#A31515;"">'Production.UnitMeasure'</span>),<span style=""color:#A31515;"">'ISTABLE'</span>) <span style=""color:Blue;"">IS</span> <span style=""color:Blue;"">NULL</span>
-    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">'ERROR: UnitMeasure is not a valid object.'</span>;
+<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">OBJECTPROPERTY</span> (<span style=""color:Blue;"">OBJECT_ID</span>(N<span style=""color:#A31515;"">&#39;Production.UnitMeasure&#39;</span>),<span style=""color:#A31515;"">&#39;ISTABLE&#39;</span>) = 1
+    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">&#39;UnitMeasure is a table.&#39;</span>
+<span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">OBJECTPROPERTY</span> (<span style=""color:Blue;"">OBJECT_ID</span>(N<span style=""color:#A31515;"">&#39;Production.UnitMeasure&#39;</span>),<span style=""color:#A31515;"">&#39;ISTABLE&#39;</span>) = 0
+    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">&#39;UnitMeasure is not a table.&#39;</span>
+<span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">OBJECTPROPERTY</span> (<span style=""color:Blue;"">OBJECT_ID</span>(N<span style=""color:#A31515;"">&#39;Production.UnitMeasure&#39;</span>),<span style=""color:#A31515;"">&#39;ISTABLE&#39;</span>) <span style=""color:Blue;"">IS</span> <span style=""color:Blue;"">NULL</span>
+    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">&#39;ERROR: UnitMeasure is not a valid object.&#39;</span>;
 GO
 
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">OBJECTPROPERTY</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">'dbo.ufnGetProductDealerPrice'</span>), <span style=""color:#A31515;"">'IsDeterministic'</span>);
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">OBJECTPROPERTY</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">&#39;dbo.ufnGetProductDealerPrice&#39;</span>), <span style=""color:#A31515;"">&#39;IsDeterministic&#39;</span>);
 GO
 
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
 <span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">name</span>, <span style=""color:Blue;"">object_id</span>, type_desc
 <span style=""color:Blue;"">FROM</span> sys.objects 
-<span style=""color:Blue;"">WHERE</span> <span style=""color:Blue;"">OBJECTPROPERTY</span>(<span style=""color:Blue;"">object_id</span>, N<span style=""color:#A31515;"">'SchemaId'</span>) = SCHEMA_ID(N<span style=""color:#A31515;"">'Production'</span>)
+<span style=""color:Blue;"">WHERE</span> <span style=""color:Blue;"">OBJECTPROPERTY</span>(<span style=""color:Blue;"">object_id</span>, N<span style=""color:#A31515;"">&#39;SchemaId&#39;</span>) = SCHEMA_ID(N<span style=""color:#A31515;"">&#39;Production&#39;</span>)
 <span style=""color:Blue;"">ORDER</span> <span style=""color:Blue;"">BY</span> type_desc, <span style=""color:Blue;"">name</span>;
 GO
 </pre></div>";
@@ -609,9 +609,9 @@ WHERE colB = 1689";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">CREATE</span> <span style=""color:Blue;"">TABLE</span> tableA(colA <span style=""color:Magenta;"">sql_variant</span>, colB <span style=""color:Blue;"">int</span>)
 <span style=""color:Blue;"">INSERT</span> <span style=""color:Blue;"">INTO</span> tableA <span style=""color:Blue;"">values</span> ( <span style=""color:Magenta;"">cast</span> (46279.1 <span style=""color:Blue;"">as</span> <span style=""color:Blue;"">decimal</span>(8,2)), 1689)
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Magenta;"">SQL_VARIANT_PROPERTY</span>(colA,<span style=""color:#A31515;"">'BaseType'</span>) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'Base Type'</span>,
-       <span style=""color:Magenta;"">SQL_VARIANT_PROPERTY</span>(colA,<span style=""color:#A31515;"">'Precision'</span>) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'Precision'</span>,
-       <span style=""color:Magenta;"">SQL_VARIANT_PROPERTY</span>(colA,<span style=""color:#A31515;"">'Scale'</span>) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'Scale'</span>
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Magenta;"">SQL_VARIANT_PROPERTY</span>(colA,<span style=""color:#A31515;"">&#39;BaseType&#39;</span>) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;Base Type&#39;</span>,
+       <span style=""color:Magenta;"">SQL_VARIANT_PROPERTY</span>(colA,<span style=""color:#A31515;"">&#39;Precision&#39;</span>) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;Precision&#39;</span>,
+       <span style=""color:Magenta;"">SQL_VARIANT_PROPERTY</span>(colA,<span style=""color:#A31515;"">&#39;Scale&#39;</span>) <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;Scale&#39;</span>
 <span style=""color:Blue;"">FROM</span> tableA
 <span style=""color:Blue;"">WHERE</span> colB = 1689
 </pre></div>";
@@ -631,10 +631,10 @@ FROM sys.types;
 SELECT TYPEPROPERTY( 'tinyint', 'PRECISION');";
                 string expected =
 @"<div style=""color:Black;background-color:White;""><pre>
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">TYPEPROPERTY</span>(SCHEMA_NAME(schema_id) + <span style=""color:#A31515;"">'.'</span> + <span style=""color:Blue;"">name</span>, <span style=""color:#A31515;"">'OwnerId'</span>) <span style=""color:Blue;"">AS</span> owner_id, <span style=""color:Blue;"">name</span>, system_type_id, user_type_id, schema_id
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">TYPEPROPERTY</span>(SCHEMA_NAME(schema_id) + <span style=""color:#A31515;"">&#39;.&#39;</span> + <span style=""color:Blue;"">name</span>, <span style=""color:#A31515;"">&#39;OwnerId&#39;</span>) <span style=""color:Blue;"">AS</span> owner_id, <span style=""color:Blue;"">name</span>, system_type_id, user_type_id, schema_id
 <span style=""color:Blue;"">FROM</span> sys.types;
 
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">TYPEPROPERTY</span>( <span style=""color:#A31515;"">'tinyint'</span>, <span style=""color:#A31515;"">'PRECISION'</span>);
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Blue;"">TYPEPROPERTY</span>( <span style=""color:#A31515;"">&#39;tinyint&#39;</span>, <span style=""color:#A31515;"">&#39;PRECISION&#39;</span>);
 </pre></div>";
 
                 string actual = new CodeColorizer().Colorize(sourceText, Languages.Sql);

@@ -109,7 +109,7 @@ namespace ColorCode
 @"<script type=""text/javascript"">var variableName = 'aString';</script>";
             string expected =
 @"<div style=""color:Black;background-color:White;""><pre>
-<span style=""color:Blue;"">&lt;</span><span style=""color:#A31515;"">script</span> <span style=""color:Red;"">type</span><span style=""color:Blue;"">=</span><span style=""color:Blue;"">&quot;text/javascript&quot;</span><span style=""color:Blue;"">&gt;</span><span style=""color:Blue;"">var</span> variableName = <span style=""color:#A31515;"">'aString'</span>;<span style=""color:Blue;"">&lt;/</span><span style=""color:#A31515;"">script</span><span style=""color:Blue;"">&gt;</span>
+<span style=""color:Blue;"">&lt;</span><span style=""color:#A31515;"">script</span> <span style=""color:Red;"">type</span><span style=""color:Blue;"">=</span><span style=""color:Blue;"">&quot;text/javascript&quot;</span><span style=""color:Blue;"">&gt;</span><span style=""color:Blue;"">var</span> variableName = <span style=""color:#A31515;"">&#39;aString&#39;</span>;<span style=""color:Blue;"">&lt;/</span><span style=""color:#A31515;"">script</span><span style=""color:Blue;"">&gt;</span>
 </pre></div>";
 
             string actual = new CodeColorizer().Colorize(source, Languages.Html);
@@ -134,7 +134,7 @@ namespace ColorCode
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">&lt;</span><span style=""color:#A31515;"">div</span><span style=""color:Blue;"">&gt;</span>
     <span style=""color:Blue;"">&lt;</span><span style=""color:#A31515;"">script</span> <span style=""color:Red;"">type</span><span style=""color:Blue;"">=</span><span style=""color:Blue;"">&quot;text/javascript&quot;</span><span style=""color:Blue;"">&gt;</span>
-        <span style=""color:Blue;"">var</span> variableName = <span style=""color:#A31515;"">'foo'</span>;
+        <span style=""color:Blue;"">var</span> variableName = <span style=""color:#A31515;"">&#39;foo&#39;</span>;
 
         <span style=""color:Blue;"">function</span> functionName(arg1, arg2) {
             <span style=""color:Blue;"">return</span> variableName;
@@ -237,8 +237,8 @@ namespace ColorCode
 
             sw.Stop();
             TimeSpan elapsed = sw.Elapsed;
-
-            Assert.True(elapsed.Seconds <= 1);
+            Console.WriteLine(elapsed.TotalSeconds);
+            Assert.True(elapsed.TotalSeconds <= 1);
         }
 
         [Fact]

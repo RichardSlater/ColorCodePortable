@@ -20,7 +20,7 @@ GO";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">USE</span> AdventureWorks;
 GO
-<span style=""color:Blue;"">SELECT</span> <span style=""color:Magenta;"">PATINDEX</span>(<span style=""color:#A31515;"">'%ensure%'</span>,DocumentSummary)
+<span style=""color:Blue;"">SELECT</span> <span style=""color:Magenta;"">PATINDEX</span>(<span style=""color:#A31515;"">&#39;%ensure%&#39;</span>,DocumentSummary)
 <span style=""color:Blue;"">FROM</span> Production.Document
 <span style=""color:Blue;"">WHERE</span> DocumentID = 3;
 GO
@@ -46,8 +46,8 @@ GO";
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">USE</span> pubs;
 GO
-<span style=""color:Blue;"">SELECT</span> pub_id, <span style=""color:#A31515;"">'Valid (if 1) Regex data'</span> 
- = <span style=""color:Blue;"">TEXTVALID</span> (<span style=""color:#A31515;"">'pub_info.logo'</span>, <span style=""color:Blue;"">TEXTPTR</span>(logo)) 
+<span style=""color:Blue;"">SELECT</span> pub_id, <span style=""color:#A31515;"">&#39;Valid (if 1) Regex data&#39;</span> 
+ = <span style=""color:Blue;"">TEXTVALID</span> (<span style=""color:#A31515;"">&#39;pub_info.logo&#39;</span>, <span style=""color:Blue;"">TEXTPTR</span>(logo)) 
 <span style=""color:Blue;"">FROM</span> pub_info
 <span style=""color:Blue;"">ORDER</span> <span style=""color:Blue;"">BY</span> pub_id;
 GO
@@ -78,7 +78,7 @@ GO
 <span style=""color:Blue;"">SELECT</span> @ptrval = <span style=""color:Blue;"">TEXTPTR</span>(logo) 
 <span style=""color:Blue;"">FROM</span> pub_info pr, publishers p
 <span style=""color:Blue;"">WHERE</span> p.pub_id = pr.pub_id
-    <span style=""color:Blue;"">AND</span> p.pub_name = <span style=""color:#A31515;"">'New Moon Books'</span>
+    <span style=""color:Blue;"">AND</span> p.pub_name = <span style=""color:#A31515;"">&#39;New Moon Books&#39;</span>
 GO
 </pre></div>";
 

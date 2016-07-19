@@ -17,7 +17,7 @@
     <span style="color:Gray;">///</span><span style="color:Green;"> </span>
     <span style="color:Gray;">///</span><span style="color:Green;">     /*{css:ConstantName}*/</span>
     <span style="color:Gray;">///</span><span style="color:Green;"> </span>
-    <span style="color:Gray;">///</span><span style="color:Green;"> with the correspondingly named AppSetting Key from the containing directory's .config file</span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> with the correspondingly named AppSetting Key from the containing directory&#39;s .config file</span>
     <span style="color:Gray;">///</span> <span style="color:Gray;">&lt;/summary&gt;</span>
     <span style="color:Blue;">public</span> <span style="color:Blue;">class</span> StyleSheet : IHttpHandler
     {
@@ -28,7 +28,7 @@
                 <span style="color:Blue;">return</span>;
 
             <span style="color:Blue;">string</span>[] cssFiles;
-            cssFiles = css.ToString().Split(<span style="color:#A31515;">','</span>);
+            cssFiles = css.ToString().Split(<span style="color:#A31515;">&#39;,&#39;</span>);
             <span style="color:Blue;">for</span> (<span style="color:Blue;">int</span> i = 0; i &lt; cssFiles.Length; i++)
             {
                 cssFiles[i] = Path.GetFileName(cssFiles[i].Trim());

@@ -62,7 +62,7 @@ public class Class1
                 Assert.Equal(expected, actual);
             }
 
-            [Fact(Skip = "")]
+            [Fact]
             public void WillStyleMultiLineComment()
             {
                 string source =
@@ -70,8 +70,8 @@ public class Class1
 /// This class implements the MD4 message digest algorithm.";
                 string expected =
     @"<div style=""color:Black;background-color:White;""><pre>
-<span style=""color:Green;""><span style=""color:Gray;"">///</span></span><span style=""color:Green;""> </span><span style=""color:Blue;""><span style=""color:Gray;"">&lt;</span><span style=""color:Gray;"">summary</span></span><span style=""color:Blue;""><span style=""color:Gray;"">&gt;</span></span>
-<span style=""color:Green;""><span style=""color:Gray;"">///</span></span><span style=""color:Green;""> This class implements the MD4 message digest algorithm.</span>
+<span style=""color:Gray;"">///</span> <span style=""color:Gray;"">&lt;summary&gt;</span>
+<span style=""color:Gray;"">///</span><span style=""color:Green;""> This class implements the MD4 message digest algorithm.</span>
 </pre></div>";
 
                 string actual = new CodeColorizer().Colorize(source, Languages.CSharp);

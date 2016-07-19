@@ -16,7 +16,7 @@ namespace ColorCode
         {
             List<object[]> colorizeData = new List<object[]>();
 
-            string appPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string appPath = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath);
             
             string[] dirNames = Directory.GetDirectories(Path.Combine(appPath, @"..\..\Data"));
 

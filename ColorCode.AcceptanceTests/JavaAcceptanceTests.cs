@@ -67,7 +67,7 @@ comment line 2
             public void WillColorizeCharacters()
             {
                 const string source = @"char aChar = 'a';";
-                var expected = AcceptanceHelper.BuildExpected(@"<span style=""color:Blue;"">char</span> aChar = <span style=""color:#A31515;"">'a'</span>;");
+                var expected = AcceptanceHelper.BuildExpected(@"<span style=""color:Blue;"">char</span> aChar = <span style=""color:#A31515;"">&#39;a&#39;</span>;");
 
                 var actual = new CodeColorizer().Colorize(source, Languages.Java);
 

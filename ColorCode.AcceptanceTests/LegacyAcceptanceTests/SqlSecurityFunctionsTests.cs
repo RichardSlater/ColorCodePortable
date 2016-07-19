@@ -26,17 +26,17 @@ go";
                 string expected =
 @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Green;"">-- Test membership in db_owner and print appropriate message.</span>
-<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_MEMBER</span> (<span style=""color:#A31515;"">'db_owner'</span>) = 1
-    <span style=""color:Blue;"">print</span> <span style=""color:#A31515;"">'Current user is a member of the db_owner role'</span>
-<span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_MEMBER</span> (<span style=""color:#A31515;"">'db_owner'</span>) = 0
-    <span style=""color:Blue;"">print</span> <span style=""color:#A31515;"">'Current user is NOT a member of the db_owner role'</span>
-<span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_MEMBER</span> (<span style=""color:#A31515;"">'db_owner'</span>) <span style=""color:Blue;"">IS</span> <span style=""color:Blue;"">NULL</span>
-    <span style=""color:Blue;"">print</span> <span style=""color:#A31515;"">'ERROR: Invalid group / role specified'</span>
+<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_MEMBER</span> (<span style=""color:#A31515;"">&#39;db_owner&#39;</span>) = 1
+    <span style=""color:Blue;"">print</span> <span style=""color:#A31515;"">&#39;Current user is a member of the db_owner role&#39;</span>
+<span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_MEMBER</span> (<span style=""color:#A31515;"">&#39;db_owner&#39;</span>) = 0
+    <span style=""color:Blue;"">print</span> <span style=""color:#A31515;"">&#39;Current user is NOT a member of the db_owner role&#39;</span>
+<span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_MEMBER</span> (<span style=""color:#A31515;"">&#39;db_owner&#39;</span>) <span style=""color:Blue;"">IS</span> <span style=""color:Blue;"">NULL</span>
+    <span style=""color:Blue;"">print</span> <span style=""color:#A31515;"">&#39;ERROR: Invalid group / role specified&#39;</span>
 go
 
 <span style=""color:Green;"">-- Execute SELECT if user is a member of ADVWORKS\Shipping.</span>
-<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_MEMBER</span> (<span style=""color:#A31515;"">'ADVWORKS\Shipping'</span>) = 1
-    <span style=""color:Blue;"">SELECT</span> <span style=""color:#A31515;"">'User '</span> + <span style=""color:Magenta;"">USER</span> + <span style=""color:#A31515;"">' is a member of ADVWORKS\Shipping.'</span> 
+<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_MEMBER</span> (<span style=""color:#A31515;"">&#39;ADVWORKS\Shipping&#39;</span>) = 1
+    <span style=""color:Blue;"">SELECT</span> <span style=""color:#A31515;"">&#39;User &#39;</span> + <span style=""color:Magenta;"">USER</span> + <span style=""color:#A31515;"">&#39; is a member of ADVWORKS\Shipping.&#39;</span> 
 go
 </pre></div>";
 
@@ -69,7 +69,7 @@ GO
 (
 login_sid   <span style=""color:Blue;"">varbinary</span>(85) <span style=""color:Blue;"">DEFAULT</span> <span style=""color:Blue;"">SUSER_SID</span>(),
 login_name  <span style=""color:Blue;"">varchar</span>(30) <span style=""color:Blue;"">DEFAULT</span> <span style=""color:Magenta;"">SYSTEM_USER</span>,
-login_dept  <span style=""color:Blue;"">varchar</span>(10) <span style=""color:Blue;"">DEFAULT</span> <span style=""color:#A31515;"">'SALES'</span>,
+login_dept  <span style=""color:Blue;"">varchar</span>(10) <span style=""color:Blue;"">DEFAULT</span> <span style=""color:#A31515;"">&#39;SALES&#39;</span>,
 login_date  <span style=""color:Blue;"">datetime</span> <span style=""color:Blue;"">DEFAULT</span> <span style=""color:Magenta;"">GETDATE</span>()
 ) 
 GO
@@ -141,12 +141,12 @@ ELSE IF IS_SRVROLEMEMBER ('sysadmin') IS NULL
     print 'ERROR: The server role specified is not valid.'";
                 string expected =
 @"<div style=""color:Black;background-color:White;""><pre>
-<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_SRVROLEMEMBER</span> (<span style=""color:#A31515;"">'sysadmin'</span>) = 1
-    <span style=""color:Blue;"">print</span> <span style=""color:#A31515;"">'Current user'</span><span style=""color:#A31515;"">'s login is a member of the sysadmin role'</span>
-<span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_SRVROLEMEMBER</span> (<span style=""color:#A31515;"">'sysadmin'</span>) = 0
-    <span style=""color:Blue;"">print</span> <span style=""color:#A31515;"">'Current user'</span><span style=""color:#A31515;"">'s login is NOT a member of the sysadmin role'</span>
-<span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_SRVROLEMEMBER</span> (<span style=""color:#A31515;"">'sysadmin'</span>) <span style=""color:Blue;"">IS</span> <span style=""color:Blue;"">NULL</span>
-    <span style=""color:Blue;"">print</span> <span style=""color:#A31515;"">'ERROR: The server role specified is not valid.'</span>
+<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_SRVROLEMEMBER</span> (<span style=""color:#A31515;"">&#39;sysadmin&#39;</span>) = 1
+    <span style=""color:Blue;"">print</span> <span style=""color:#A31515;"">&#39;Current user&#39;</span><span style=""color:#A31515;"">&#39;s login is a member of the sysadmin role&#39;</span>
+<span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_SRVROLEMEMBER</span> (<span style=""color:#A31515;"">&#39;sysadmin&#39;</span>) = 0
+    <span style=""color:Blue;"">print</span> <span style=""color:#A31515;"">&#39;Current user&#39;</span><span style=""color:#A31515;"">&#39;s login is NOT a member of the sysadmin role&#39;</span>
+<span style=""color:Blue;"">ELSE</span> <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">IS_SRVROLEMEMBER</span> (<span style=""color:#A31515;"">&#39;sysadmin&#39;</span>) <span style=""color:Blue;"">IS</span> <span style=""color:Blue;"">NULL</span>
+    <span style=""color:Blue;"">print</span> <span style=""color:#A31515;"">&#39;ERROR: The server role specified is not valid.&#39;</span>
 </pre></div>";
 
                 string actual = new CodeColorizer().Colorize(sourceText, Languages.Sql);
@@ -177,17 +177,17 @@ ELSE
 <span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">PERMISSIONS</span>()&amp;2=2
     <span style=""color:Blue;"">CREATE</span> <span style=""color:Blue;"">TABLE</span> test_table (col1 <span style=""color:Blue;"">INT</span>)
 <span style=""color:Blue;"">ELSE</span>
-    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">'ERROR: The current user cannot create a table.'</span>;
+    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">&#39;ERROR: The current user cannot create a table.&#39;</span>;
 
-<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">PERMISSIONS</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">'AdventureWorks.Person.Address'</span>,<span style=""color:#A31515;"">'U'</span>))&amp;8=8 
-    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">'The current user can insert data into Person.Address.'</span>
+<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">PERMISSIONS</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">&#39;AdventureWorks.Person.Address&#39;</span>,<span style=""color:#A31515;"">&#39;U&#39;</span>))&amp;8=8 
+    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">&#39;The current user can insert data into Person.Address.&#39;</span>
 <span style=""color:Blue;"">ELSE</span>
-    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">'ERROR: The current user cannot insert data into Person.Address.'</span>;
+    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">&#39;ERROR: The current user cannot insert data into Person.Address.&#39;</span>;
 
-<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">PERMISSIONS</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">'AdventureWorks.Person.Address'</span>,<span style=""color:#A31515;"">'U'</span>))&amp;0x80000=0x80000
-    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">'INSERT on Person.Address is grantable.'</span>
+<span style=""color:Blue;"">IF</span> <span style=""color:Blue;"">PERMISSIONS</span>(<span style=""color:Blue;"">OBJECT_ID</span>(<span style=""color:#A31515;"">&#39;AdventureWorks.Person.Address&#39;</span>,<span style=""color:#A31515;"">&#39;U&#39;</span>))&amp;0x80000=0x80000
+    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">&#39;INSERT on Person.Address is grantable.&#39;</span>
 <span style=""color:Blue;"">ELSE</span>
-    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">'You may not GRANT INSERT permissions on Person.Address.'</span>;
+    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">&#39;You may not GRANT INSERT permissions on Person.Address.&#39;</span>;
 </pre></div>";
 
                 string actual = new CodeColorizer().Colorize(sourceText, Languages.Sql);

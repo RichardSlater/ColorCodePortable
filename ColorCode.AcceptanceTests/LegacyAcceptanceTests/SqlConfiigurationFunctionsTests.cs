@@ -15,9 +15,9 @@ SET TEXTSIZE 2048
 SELECT @@TEXTSIZE AS 'Regex Size'";
                 string expected =
 @"<div style=""color:Black;background-color:White;""><pre>
-<span style=""color:Blue;"">SELECT</span> @@TEXTSIZE <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'Regex Size'</span>
+<span style=""color:Blue;"">SELECT</span> @@TEXTSIZE <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;Regex Size&#39;</span>
 <span style=""color:Blue;"">SET</span> <span style=""color:Blue;"">TEXTSIZE</span> 2048
-<span style=""color:Blue;"">SELECT</span> @@TEXTSIZE <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">'Regex Size'</span>
+<span style=""color:Blue;"">SELECT</span> @@TEXTSIZE <span style=""color:Blue;"">AS</span> <span style=""color:#A31515;"">&#39;Regex Size&#39;</span>
 </pre></div>";
 
                 string actual = new CodeColorizer().Colorize(sourceText, Languages.Sql);

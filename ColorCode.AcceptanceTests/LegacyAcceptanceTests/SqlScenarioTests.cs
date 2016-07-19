@@ -43,7 +43,7 @@ namespace ColorCode.SqlAcceptanceTests
     @"INSERT INTO [TableName] ([ColumnOneName], [ColumnTwoName]) VALUES ('Planned', 0)";
                 string expected =
     @"<div style=""color:Black;background-color:White;""><pre>
-<span style=""color:Blue;"">INSERT</span> <span style=""color:Blue;"">INTO</span> [TableName] ([ColumnOneName], [ColumnTwoName]) <span style=""color:Blue;"">VALUES</span> (<span style=""color:#A31515;"">'Planned'</span>, 0)
+<span style=""color:Blue;"">INSERT</span> <span style=""color:Blue;"">INTO</span> [TableName] ([ColumnOneName], [ColumnTwoName]) <span style=""color:Blue;"">VALUES</span> (<span style=""color:#A31515;"">&#39;Planned&#39;</span>, 0)
 </pre></div>";
 
                 string actual = new CodeColorizer().Colorize(source, Languages.Sql);
@@ -61,8 +61,8 @@ WHERE [ColumnTwoName] > '2008-5-13'";
                 string expected =
     @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">UPDATE</span> [TableName]
-<span style=""color:Blue;"">SET</span> [ColumnOneName] = <span style=""color:#A31515;"">'value'</span> 
-<span style=""color:Blue;"">WHERE</span> [ColumnTwoName] &gt; <span style=""color:#A31515;"">'2008-5-13'</span>
+<span style=""color:Blue;"">SET</span> [ColumnOneName] = <span style=""color:#A31515;"">&#39;value&#39;</span> 
+<span style=""color:Blue;"">WHERE</span> [ColumnTwoName] &gt; <span style=""color:#A31515;"">&#39;2008-5-13&#39;</span>
 </pre></div>";
 
                 string actual = new CodeColorizer().Colorize(source, Languages.Sql);
@@ -79,7 +79,7 @@ ADD [NewColumnName] VARCHAR(20) NOT NULL CONSTRAINT [ConstraintName] DEFAULT('De
                 string expected =
     @"<div style=""color:Black;background-color:White;""><pre>
 <span style=""color:Blue;"">ALTER</span> <span style=""color:Blue;"">TABLE</span> [TableName]
-<span style=""color:Blue;"">ADD</span> [NewColumnName] <span style=""color:Blue;"">VARCHAR</span>(20) <span style=""color:Blue;"">NOT</span> <span style=""color:Blue;"">NULL</span> <span style=""color:Blue;"">CONSTRAINT</span> [ConstraintName] <span style=""color:Blue;"">DEFAULT</span>(<span style=""color:#A31515;"">'DefaultValue'</span>);
+<span style=""color:Blue;"">ADD</span> [NewColumnName] <span style=""color:Blue;"">VARCHAR</span>(20) <span style=""color:Blue;"">NOT</span> <span style=""color:Blue;"">NULL</span> <span style=""color:Blue;"">CONSTRAINT</span> [ConstraintName] <span style=""color:Blue;"">DEFAULT</span>(<span style=""color:#A31515;"">&#39;DefaultValue&#39;</span>);
 </pre></div>";
 
                 string actual = new CodeColorizer().Colorize(source, Languages.Sql);
@@ -182,7 +182,7 @@ GO
 
 <span style=""color:Blue;"">DECLARE</span> cursorName <span style=""color:Blue;"">CURSOR</span> <span style=""color:Blue;"">FOR</span>
 <span style=""color:Blue;"">SELECT</span> columnNameOne <span style=""color:Blue;"">FROM</span> tableName
-<span style=""color:Blue;"">WHERE</span> columnNameOne <span style=""color:Blue;"">LIKE</span> <span style=""color:#A31515;"">'SomeText'</span>
+<span style=""color:Blue;"">WHERE</span> columnNameOne <span style=""color:Blue;"">LIKE</span> <span style=""color:#A31515;"">&#39;SomeText&#39;</span>
 <span style=""color:Blue;"">ORDER</span> <span style=""color:Blue;"">BY</span> columnNameOne
 
 <span style=""color:Blue;"">OPEN</span> cursorName
@@ -192,7 +192,7 @@ GO
 
 <span style=""color:Blue;"">WHILE</span> <span style=""color:Magenta;"">@@FETCH_STATUS</span> = 0
 <span style=""color:Blue;"">BEGIN</span>
-    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">'Column StyleName One: '</span> + @columnOneName
+    <span style=""color:Blue;"">PRINT</span> <span style=""color:#A31515;"">&#39;Column StyleName One: &#39;</span> + @columnOneName
 
     <span style=""color:Blue;"">FETCH</span> <span style=""color:Blue;"">NEXT</span> <span style=""color:Blue;"">FROM</span> cursorName
     <span style=""color:Blue;"">INTO</span> @columnNameOne
@@ -335,7 +335,7 @@ aliasName.StyleName
 </ROOT>'";
                 string expected =
 @"<div style=""color:Black;background-color:White;""><pre>
-<span style=""color:Blue;"">SET</span> @doc =<span style=""color:#A31515;"">'
+<span style=""color:Blue;"">SET</span> @doc =<span style=""color:#A31515;"">&#39;
 &lt;ROOT&gt;
 &lt;Customer CustomerID=&quot;VINET&quot; ContactName=&quot;Paul Henriot&quot;&gt;
     &lt;Order CustomerID=&quot;VINET&quot; EmployeeID=&quot;5&quot; OrderDate=&quot;1996-07-04T00:00:00&quot;&gt;
@@ -348,7 +348,7 @@ aliasName.StyleName
         &lt;OrderDetail OrderID=&quot;10283&quot; ProductID=&quot;72&quot; Quantity=&quot;3&quot;/&gt;
     &lt;/Order&gt;
 &lt;/Customer&gt;
-&lt;/ROOT&gt;'</span>
+&lt;/ROOT&gt;&#39;</span>
 </pre></div>";
 
                 string actual = new CodeColorizer().Colorize(source, Languages.Sql);

@@ -60,7 +60,7 @@ namespace ColorCode
 @"var variableName = 'aString';";
             string expected =
 @"<div style=""color:Black;background-color:White;""><pre>
-<span style=""color:Blue;"">var</span> variableName = <span style=""color:#A31515;"">'aString'</span>;
+<span style=""color:Blue;"">var</span> variableName = <span style=""color:#A31515;"">&#39;aString&#39;</span>;
 </pre></div>";
 
             string actual = new CodeColorizer().Colorize(source, Languages.JavaScript);
@@ -131,7 +131,7 @@ comment three
     }";
             string expected =
 @"<div style=""color:Black;background-color:White;""><pre>
-<span style=""color:Blue;"">if</span> (<span style=""color:Blue;"">typeof</span>(NameSpace)!=<span style=""color:#A31515;"">'undefined'</span> &amp;&amp; <span style=""color:Blue;"">typeof</span>(NameSpace.NestedNameSpace)!=<span style=""color:#A31515;"">'undefined'</span>)
+<span style=""color:Blue;"">if</span> (<span style=""color:Blue;"">typeof</span>(NameSpace)!=<span style=""color:#A31515;"">&#39;undefined&#39;</span> &amp;&amp; <span style=""color:Blue;"">typeof</span>(NameSpace.NestedNameSpace)!=<span style=""color:#A31515;"">&#39;undefined&#39;</span>)
     NameSpace.NestedNameSpace.ClassName.prototype.someMethod = <span style=""color:Blue;"">function</span> () {
         <span style=""color:Blue;"">return</span> <span style=""color:Blue;"">this</span>._someValue;
     }

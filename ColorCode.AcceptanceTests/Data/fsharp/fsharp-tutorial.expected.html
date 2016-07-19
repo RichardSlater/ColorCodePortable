@@ -9,8 +9,8 @@
 <span style="color:Green;">// For more about F#, see:</span>
 <span style="color:Green;">//     http://fsharp.net</span>
 <span style="color:Green;">//</span>
-<span style="color:Green;">// For additional templates to use with F#, see the 'Online Templates' in Visual Studio, </span>
-<span style="color:Green;">//     'New Project' --&gt; 'Online Templates'</span>
+<span style="color:Green;">// For additional templates to use with F#, see the &#39;Online Templates&#39; in Visual Studio, </span>
+<span style="color:Green;">//     &#39;New Project&#39; --&gt; &#39;Online Templates&#39;</span>
 <span style="color:Green;">//</span>
 <span style="color:Green;">// For specific F# topics, see:</span>
 <span style="color:Green;">//     http://go.microsoft.com/fwlink/?LinkID=234174 (F# Development Portal)</span>
@@ -64,18 +64,18 @@
 
 <span style="color:Blue;">module</span> BasicFunctions = 
 
-    <span style="color:Green;">// Use 'let' to define a function that accepts an integer argument and returns an integer. </span>
+    <span style="color:Green;">// Use &#39;let&#39; to define a function that accepts an integer argument and returns an integer. </span>
     <span style="color:Blue;">let</span> func1 x = x*x + 3             
 
     <span style="color:Green;">// Parenthesis are optional for function arguments</span>
     <span style="color:Blue;">let</span> func1a (x) = x*x + 3             
 
-    <span style="color:Gray;">///</span><span style="color:Green;"> Apply the function, naming the function return result using 'let'. </span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> Apply the function, naming the function return result using &#39;let&#39;. </span>
     <span style="color:Gray;">///</span><span style="color:Green;"> The variable type is inferred from the function return type.</span>
     <span style="color:Blue;">let</span> result1 = func1 4573
     printfn <span style="color:#A31515;">&quot;The result of squaring the integer 4573 and adding 3 is %d&quot;</span> result1
 
-    <span style="color:Green;">// When needed, annotate the type of a parameter name using '(argument:type)'</span>
+    <span style="color:Green;">// When needed, annotate the type of a parameter name using &#39;(argument:type)&#39;</span>
     <span style="color:Blue;">let</span> func2 (x:int) = 2*x*x - x/5 + 3
 
     <span style="color:Blue;">let</span> result2 = func2 (7 + 4)
@@ -103,7 +103,7 @@
 
     <span style="color:Blue;">let</span> boolean3 = not boolean1 &amp;&amp; (boolean2 || <span style="color:Blue;">false</span>)
 
-    printfn <span style="color:#A31515;">&quot;The expression 'not boolean1 &amp;&amp; (boolean2 || false)' is %A&quot;</span> boolean3
+    printfn <span style="color:#A31515;">&quot;The expression &#39;not boolean1 &amp;&amp; (boolean2 || false)&#39; is %A&quot;</span> boolean3
 
 
 
@@ -163,7 +163,7 @@
 
     <span style="color:Blue;">let</span> list2 = [ 1; 2; 3 ]    <span style="color:Gray;">///</span><span style="color:Green;"> list of 3 elements</span>
 
-    <span style="color:Blue;">let</span> list3 = 42 :: list2    <span style="color:Gray;">///</span><span style="color:Green;"> a new list with '42' added to the beginning</span>
+    <span style="color:Blue;">let</span> list3 = 42 :: list2    <span style="color:Gray;">///</span><span style="color:Green;"> a new list with &#39;42&#39; added to the beginning</span>
 
     <span style="color:Blue;">let</span> numberList = [ 1 .. 1000 ]  <span style="color:Gray;">///</span><span style="color:Green;"> list of integers from 1 to 1000</span>
 
@@ -199,12 +199,12 @@
 
 <span style="color:Blue;">module</span> DefiningClasses = 
 
-    <span style="color:Gray;">///</span><span style="color:Green;"> The class's constructor takes two arguments: dx and dy, both of type 'float'. </span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> The class&#39;s constructor takes two arguments: dx and dy, both of type &#39;float&#39;. </span>
     <span style="color:Blue;">type</span> Vector2D(dx : float, dy : float) = 
         <span style="color:Gray;">///</span><span style="color:Green;"> The length of the vector, computed when the object is constructed</span>
         <span style="color:Blue;">let</span> length = sqrt (dx*dx + dy*dy)
 
-        <span style="color:Green;">// 'this' specifies a name for the object's self identifier.</span>
+        <span style="color:Green;">// &#39;this&#39; specifies a name for the object&#39;s self identifier.</span>
         <span style="color:Green;">// In instance methods, it must appear before the member name.</span>
         <span style="color:Blue;">member</span> this.DX = dx  
 
@@ -230,14 +230,14 @@
 
 <span style="color:Blue;">module</span> DefiningGenericClasses = 
 
-    <span style="color:Blue;">type</span> StateTracker&lt;<span style="color:#A31515;">'T&gt;(initialElement: '</span>T) = <span style="color:Green;">// 'T is the type parameter for the class</span>
+    <span style="color:Blue;">type</span> StateTracker&lt;<span style="color:#A31515;">&#39;T&gt;(initialElement: &#39;</span>T) = <span style="color:Green;">// &#39;T is the type parameter for the class</span>
 
         <span style="color:Gray;">///</span><span style="color:Green;"> Store the states in an array</span>
         <span style="color:Blue;">let</span> <span style="color:Blue;">mutable</span> states = [ initialElement ]
 
         <span style="color:Gray;">///</span><span style="color:Green;"> Add a new element to the list of states</span>
         <span style="color:Blue;">member</span> this.UpdateState newState = 
-            states &lt;- newState :: states  <span style="color:Green;">// use the '&lt;-' operator to mutate the value</span>
+            states &lt;- newState :: states  <span style="color:Green;">// use the &#39;&lt;-&#39; operator to mutate the value</span>
 
         <span style="color:Gray;">///</span><span style="color:Green;"> Get the entire list of historical states</span>
         <span style="color:Blue;">member</span> this.History = states
@@ -245,7 +245,7 @@
         <span style="color:Gray;">///</span><span style="color:Green;"> Get the latest state</span>
         <span style="color:Blue;">member</span> this.Current = states.Head
 
-    <span style="color:Gray;">///</span><span style="color:Green;"> An 'int' instance of the state tracker class. Note that the type parameter is inferred.</span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> An &#39;int&#39; instance of the state tracker class. Note that the type parameter is inferred.</span>
     <span style="color:Blue;">let</span> tracker = StateTracker 10
 
     <span style="color:Green;">// Add a state</span>
@@ -264,7 +264,7 @@
 
     <span style="color:Blue;">member</span> this.ReadLine() = file.ReadLine()
 
-    <span style="color:Green;">// this class's implementation of IDisposable members</span>
+    <span style="color:Green;">// this class&#39;s implementation of IDisposable members</span>
     <span style="color:Blue;">interface</span> System.IDisposable <span style="color:Blue;">with</span>    
         <span style="color:Blue;">member</span> this.Dispose() = file.Close()
 
@@ -300,7 +300,7 @@
     <span style="color:Green;">// modify an array element using the left arrow assignment operator</span>
     array2.[1] &lt;- <span style="color:#A31515;">&quot;WORLD!&quot;</span>
 
-    <span style="color:Gray;">///</span><span style="color:Green;"> Calculates the sum of the lengths of the words that start with 'h'</span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> Calculates the sum of the lengths of the words that start with &#39;h&#39;</span>
     <span style="color:Blue;">let</span> sumOfLengthsOfWords = 
         array2
         |&gt; Array.filter (<span style="color:Blue;">fun</span> x <span style="color:Blue;">-&gt;</span> x.StartsWith <span style="color:#A31515;">&quot;h&quot;</span>)
@@ -314,7 +314,7 @@
 
 <span style="color:Blue;">module</span> Sequences = 
     <span style="color:Green;">// Sequences are evaluated on-demand and are re-evaluated each time they are iterated. </span>
-    <span style="color:Green;">// An F# sequence is an instance of a System.Collections.Generic.IEnumerable&lt;'T&gt;,</span>
+    <span style="color:Green;">// An F# sequence is an instance of a System.Collections.Generic.IEnumerable&lt;&#39;T&gt;,</span>
     <span style="color:Green;">// so Seq functions can be applied to Lists and Arrays as well.</span>
 
     <span style="color:Gray;">///</span><span style="color:Green;"> The empty sequence</span>
@@ -353,7 +353,7 @@
 
 <span style="color:Blue;">module</span> RecursiveFunctions  = 
               
-    <span style="color:Gray;">///</span><span style="color:Green;"> Compute the factorial of an integer. Use 'let rec' to define a recursive function</span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> Compute the factorial of an integer. Use &#39;let rec&#39; to define a recursive function</span>
     <span style="color:Blue;">let</span> <span style="color:Blue;">rec</span> factorial n = 
         <span style="color:Blue;">if</span> n = 0 <span style="color:Blue;">then</span> 1 <span style="color:Blue;">else</span> n * factorial (n-1)
 
@@ -396,10 +396,10 @@
     <span style="color:Blue;">let</span> contact1 = { Name = <span style="color:#A31515;">&quot;Alf&quot;</span> ; Phone = <span style="color:#A31515;">&quot;(206) 555-0157&quot;</span> ; Verified = <span style="color:Blue;">false</span> }
 
     <span style="color:Green;">// create a new record that is a copy of contact1, </span>
-    <span style="color:Green;">// but has different values for the 'Phone' and 'Verified' fields</span>
+    <span style="color:Green;">// but has different values for the &#39;Phone&#39; and &#39;Verified&#39; fields</span>
     <span style="color:Blue;">let</span> contact2 = { contact1 <span style="color:Blue;">with</span> Phone = <span style="color:#A31515;">&quot;(206) 555-0112&quot;</span>; Verified = <span style="color:Blue;">true</span> }
 
-    <span style="color:Gray;">///</span><span style="color:Green;"> Converts a 'ContactCard' object to a string</span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> Converts a &#39;ContactCard&#39; object to a string</span>
     <span style="color:Blue;">let</span> showCard c = 
         c.Name + <span style="color:#A31515;">&quot; Phone: &quot;</span> + c.Phone + (<span style="color:Blue;">if</span> not c.Verified <span style="color:Blue;">then</span> <span style="color:#A31515;">&quot; (unverified)&quot;</span> <span style="color:Blue;">else</span> <span style="color:#A31515;">&quot;&quot;</span>)
         
@@ -441,7 +441,7 @@
               <span style="color:Blue;">for</span> rank <span style="color:Blue;">in</span> Rank.GetAllRanks() <span style="color:Blue;">do</span> 
                   <span style="color:Blue;">yield</span> { Suit=suit; Rank=rank } ]
 
-    <span style="color:Gray;">///</span><span style="color:Green;"> Converts a 'Card' object to a string</span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> Converts a &#39;Card&#39; object to a string</span>
     <span style="color:Blue;">let</span> showCard c = 
         <span style="color:Blue;">let</span> rankString = 
             <span style="color:Blue;">match</span> c.Rank <span style="color:Blue;">with</span> 
@@ -469,20 +469,20 @@
 <span style="color:Green;">// ---------------------------------------------------------------</span>
 
 <span style="color:Blue;">module</span> OptionTypes = 
-    <span style="color:Gray;">///</span><span style="color:Green;"> Option values are any kind of value tagged with either 'Some' or 'None'.</span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> Option values are any kind of value tagged with either &#39;Some&#39; or &#39;None&#39;.</span>
     <span style="color:Gray;">///</span><span style="color:Green;"> They are used extensively in F# code to represent the cases where many other</span>
     <span style="color:Gray;">///</span><span style="color:Green;"> languages would use null references.</span>
 
     <span style="color:Blue;">type</span> Customer = { zipCode : decimal option }
 
-    <span style="color:Gray;">///</span><span style="color:Green;"> Abstract class that computes the shipping zone for the customer's zip code, </span>
-    <span style="color:Gray;">///</span><span style="color:Green;"> given implementations for the 'getState' and 'getShippingZone' abstract methods.</span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> Abstract class that computes the shipping zone for the customer&#39;s zip code, </span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> given implementations for the &#39;getState&#39; and &#39;getShippingZone&#39; abstract methods.</span>
     [&lt;AbstractClass&gt;]
     <span style="color:Blue;">type</span> ShippingCalculator =
         <span style="color:Blue;">abstract</span> getState : decimal <span style="color:Blue;">-&gt;</span> string option
         <span style="color:Blue;">abstract</span> getShippingZone : string <span style="color:Blue;">-&gt;</span> int
 
-        <span style="color:Gray;">///</span><span style="color:Green;"> Return the shipping zone corresponding to the customer's ZIP code</span>
+        <span style="color:Gray;">///</span><span style="color:Green;"> Return the shipping zone corresponding to the customer&#39;s ZIP code</span>
         <span style="color:Gray;">///</span><span style="color:Green;"> Customer may not yet have a ZIP code or the ZIP code may be invalid</span>
         <span style="color:Blue;">member</span> this.customerShippingZone(customer : Customer) =
             customer.zipCode |&gt; Option.bind this.getState |&gt; Option.map this.getShippingZone
@@ -495,7 +495,7 @@
 
 <span style="color:Blue;">module</span> PatternMatching = 
 
-    <span style="color:Gray;">///</span><span style="color:Green;"> A record for a person's first and last name</span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> A record for a person&#39;s first and last name</span>
     <span style="color:Blue;">type</span> Person = {     
         First : string
         Last  : string
@@ -524,7 +524,7 @@
         |&gt; List.filter(<span style="color:Blue;">function</span> 
                        | Manager({First = <span style="color:#A31515;">&quot;Dave&quot;</span>}, []) <span style="color:Blue;">-&gt;</span> <span style="color:Blue;">true</span>       <span style="color:Green;">// [] matches the empty list</span>
                        | Executive({First = <span style="color:#A31515;">&quot;Dave&quot;</span>}, [], _) <span style="color:Blue;">-&gt;</span> <span style="color:Blue;">true</span>
-                       | _ <span style="color:Blue;">-&gt;</span> <span style="color:Blue;">false</span>)                                 <span style="color:Green;">// '_' is a wildcard pattern that matches anything</span>
+                       | _ <span style="color:Blue;">-&gt;</span> <span style="color:Blue;">false</span>)                                 <span style="color:Green;">// &#39;_&#39; is a wildcard pattern that matches anything</span>
                                                                      <span style="color:Green;">// this handles the &quot;or else&quot; case</span>
 
 
@@ -545,10 +545,10 @@
         <span style="color:Blue;">static</span> <span style="color:Blue;">member</span> asMeter = 1600.&lt;meter/mile&gt;
 
     <span style="color:Blue;">let</span> d  = 50.&lt;mile&gt;          <span style="color:Green;">// Distance expressed using imperial units</span>
-    <span style="color:Blue;">let</span> d' = d * mile.asMeter   <span style="color:Green;">// Same distance expressed using metric system</span>
+    <span style="color:Blue;">let</span> d&#39; = d * mile.asMeter   <span style="color:Green;">// Same distance expressed using metric system</span>
 
-    printfn <span style="color:#A31515;">&quot;%A = %A&quot;</span> d d'
-    <span style="color:Green;">// let error = d + d'       // Compile error: units of measure do not match</span>
+    printfn <span style="color:#A31515;">&quot;%A = %A&quot;</span> d d&#39;
+    <span style="color:Green;">// let error = d + d&#39;       // Compile error: units of measure do not match</span>
 
 
 

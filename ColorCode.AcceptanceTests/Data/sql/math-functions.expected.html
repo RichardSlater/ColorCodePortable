@@ -4,39 +4,39 @@
 <span style="color:Blue;">SET</span> <span style="color:Blue;">NOCOUNT</span> <span style="color:Blue;">OFF</span>;
 <span style="color:Blue;">DECLARE</span> @angle <span style="color:Blue;">float</span>;
 <span style="color:Blue;">SET</span> @angle = -1.0;
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The ACOS of the angle is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ACOS</span>(@angle));
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The ACOS of the angle is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ACOS</span>(@angle));
 
 <span style="color:Green;">/* The first value will be -1.01. This fails because the value is 
 outside the range.*/</span>
 <span style="color:Blue;">DECLARE</span> @angle <span style="color:Blue;">float</span>
 <span style="color:Blue;">SET</span> @angle = -1.01
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The ASIN of the angle is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ASIN</span>(@angle))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The ASIN of the angle is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ASIN</span>(@angle))
 GO
 
 <span style="color:Green;">-- The next value is -1.00.</span>
 <span style="color:Blue;">DECLARE</span> @angle <span style="color:Blue;">float</span>
 <span style="color:Blue;">SET</span> @angle = -1.00
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The ASIN of the angle is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ASIN</span>(@angle))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The ASIN of the angle is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ASIN</span>(@angle))
 GO
 
 <span style="color:Green;">-- The next value is 0.1472738.</span>
 <span style="color:Blue;">DECLARE</span> @angle <span style="color:Blue;">float</span>
 <span style="color:Blue;">SET</span> @angle = 0.1472738
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The ASIN of the angle is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ASIN</span>(@angle))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The ASIN of the angle is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ASIN</span>(@angle))
 GO
 
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The ATAN of -45.01 is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ATAN</span>(-45.01))
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The ATAN of -181.01 is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ATAN</span>(-181.01))
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The ATAN of 0 is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ATAN</span>(0))
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The ATAN of 0.1472738 is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ATAN</span>(0.1472738))
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The ATAN of 197.1099392 is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ATAN</span>(197.1099392))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The ATAN of -45.01 is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ATAN</span>(-45.01))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The ATAN of -181.01 is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ATAN</span>(-181.01))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The ATAN of 0 is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ATAN</span>(0))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The ATAN of 0.1472738 is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ATAN</span>(0.1472738))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The ATAN of 197.1099392 is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">ATAN</span>(197.1099392))
 GO
 
 <span style="color:Blue;">DECLARE</span> @x <span style="color:Blue;">float</span>
 <span style="color:Blue;">DECLARE</span> @y <span style="color:Blue;">float</span>
 <span style="color:Blue;">SET</span> @x = 35.175643
 <span style="color:Blue;">SET</span> @y = 129.44
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The ATN2 of the angle is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>,<span style="color:Magenta;">ATN2</span>(@x,@y ))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The ATN2 of the angle is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>,<span style="color:Magenta;">ATN2</span>(@x,@y ))
 GO
 
 <span style="color:Blue;">SELECT</span> <span style="color:Magenta;">CEILING</span>($123.45), <span style="color:Magenta;">CEILING</span>($-123.45), <span style="color:Magenta;">CEILING</span>($0.0)
@@ -44,33 +44,33 @@ GO
 
 <span style="color:Blue;">DECLARE</span> @angle <span style="color:Blue;">float</span>
 <span style="color:Blue;">SET</span> @angle = 14.78
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The COS of the angle is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>,<span style="color:Magenta;">COS</span>(@angle))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The COS of the angle is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>,<span style="color:Magenta;">COS</span>(@angle))
 GO
 
 <span style="color:Blue;">DECLARE</span> @angle <span style="color:Blue;">float</span>
 <span style="color:Blue;">SET</span> @angle = 124.1332
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The COT of the angle is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>,<span style="color:Magenta;">COT</span>(@angle))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The COT of the angle is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>,<span style="color:Magenta;">COT</span>(@angle))
 GO
 
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The number of degrees in PI/2 radians is: '</span> + 
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The number of degrees in PI/2 radians is: &#39;</span> + 
 <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">DEGREES</span>((<span style="color:Magenta;">PI</span>()/2)));
 GO
 
 <span style="color:Blue;">DECLARE</span> @var <span style="color:Blue;">float</span>
 <span style="color:Blue;">SET</span> @var = 10
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The EXP of the variable is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>,<span style="color:Magenta;">EXP</span>(@var))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The EXP of the variable is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>,<span style="color:Magenta;">EXP</span>(@var))
 GO
 
 <span style="color:Blue;">SELECT</span> <span style="color:Magenta;">FLOOR</span>(123.45), <span style="color:Magenta;">FLOOR</span>(-123.45), <span style="color:Magenta;">FLOOR</span>($123.45)
 
 <span style="color:Blue;">DECLARE</span> @var <span style="color:Blue;">float</span>
 <span style="color:Blue;">SET</span> @var = 10
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The LOG of the variable is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">LOG</span>(@var))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The LOG of the variable is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>, <span style="color:Magenta;">LOG</span>(@var))
 GO
 
 <span style="color:Blue;">DECLARE</span> @var <span style="color:Blue;">float</span>
 <span style="color:Blue;">SET</span> @var = 145.175643
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The LOG10 of the variable is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>,<span style="color:Magenta;">LOG10</span>(@var))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The LOG10 of the variable is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>,<span style="color:Magenta;">LOG10</span>(@var))
 GO
 
 <span style="color:Blue;">SELECT</span> <span style="color:Magenta;">PI</span>()
@@ -108,7 +108,7 @@ GO
 
 <span style="color:Blue;">DECLARE</span> @angle <span style="color:Blue;">float</span>
 <span style="color:Blue;">SET</span> @angle = 45.175643
-<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">'The SIN of the angle is: '</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>,<span style="color:Magenta;">SIN</span>(@angle))
+<span style="color:Blue;">SELECT</span> <span style="color:#A31515;">&#39;The SIN of the angle is: &#39;</span> + <span style="color:Magenta;">CONVERT</span>(<span style="color:Blue;">varchar</span>,<span style="color:Magenta;">SIN</span>(@angle))
 GO
 
 <span style="color:Blue;">DECLARE</span> @myvalue <span style="color:Blue;">float</span>;
