@@ -47,3 +47,4 @@ bld/
 [Oo]bj/
 [Ll]og/
 ColorCode.sln.cache
+*.nupkg

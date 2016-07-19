@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
+    <id>ColorCode.Portable</id>
     <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <title>ColorCode (Portable)</title>
+    <authors>Bashir Souid, Richard Slater</authors>
+    <owners>Bashir Souid, Richard Slater</owners>
     <licenseUrl>https://opensource.org/licenses/MS-PL</licenseUrl>
     <projectUrl>https://github.com/RichardSlater/ColorCodePortable</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright 2016</copyright>
-    <tags>Tag1 Tag2</tags>
+    <iconUrl>https://cdn.rawgit.com/RichardSlater/ColorCodePortable/c7e4e62aeafa6fcb124bc4d883c95b02a3ee1792/ColorCode/Assets/icon.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>ColorCode is a library for colorizing source code (also known as syntax highlighting).  ColorCode Portable is a fork of the original ColorCode code base to .NET Portable Class Libraries.</description>
+    <releaseNotes>Initial port of ColorCode 1.0.2 to PCL.</releaseNotes>
+    <copyright>©2016, All Rights Reserved</copyright>
+    <tags>ColorCode Syntax SyntaxHighlighting Colorizing</tags>
   </metadata>
 </package>
