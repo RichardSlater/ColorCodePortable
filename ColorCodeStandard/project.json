@@ -1,16 +1,23 @@
 ﻿{
   "version": "1.0.0-*",
 
-  "dependencies": {},
-
   "frameworks": {
     "netstandard1.1": {
+      "buildOptions": {
+        "define": [ "NETCORE" ]
+      },
       "dependencies": {
         "NETStandard.Library": "1.6.0",
         "System.Threading": "4.0.11"
       }
     },
-    ".NETPortable,Version=v4.0,Profile=Profile328": {
+    ".NETPortable,Version=v0.0,Profile=Profile2": {
+      "dependencies": {
+        "PCLWebUtility": "1.0.3"
+      },
+      "buildOptions": {
+        "define": [ "PORTABLE" ]
+      },
       "frameworkAssemblies": {
         "mscorlib": "",
         "System": "",
@@ -19,22 +26,24 @@
     },
     "net40": {
       "buildOptions": {
-        "define": [ "SUPPORT_NORMALIZE", "SUPPORT_FIXED_STRING" ]
+        "define": [ "NET40" ]
       },
       "frameworkAssemblies": {
         "mscorlib": "",
         "System": "",
-        "System.Core": ""
+        "System.Core": "",
+        "System.Web": ""
       }
     },
     "net35": {
       "buildOptions": {
-        "define": [ "SUPPORT_NORMALIZE", "SUPPORT_FIXED_STRING" ]
+        "define": [ "NET35" ]
       },
       "frameworkAssemblies": {
         "mscorlib": "",
         "System": "",
-        "System.Core": ""
+        "System.Core": "",
+        "System.Web": ""
       }
     }
   }

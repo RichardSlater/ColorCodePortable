@@ -4,7 +4,11 @@
   "targets": {
     ".NETFramework,Version=v3.5": {},
     ".NETFramework,Version=v4.0": {},
-    ".NETPortable,Version=v4.0,Profile=Profile328": {},
+    ".NETPortable,Version=v4.0,Profile=Profile328": {
+      "PCLWebUtility/1.0.3": {
+        "type": "package"
+      }
+    },
     ".NETStandard,Version=v1.1": {
       "Microsoft.NETCore.Platforms/1.0.1": {
         "type": "package",
@@ -445,6 +449,17 @@
         "NETStandard.Library.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt"
+      ]
+    },
+    "PCLWebUtility/1.0.3": {
+      "sha512": "/S7d2SzPYP6si6Z+kALu7/6aQ8lD/ZSvru2+wRvE53UydTAUpx8y4Zf4YU+dElyFzlB2XLvUfjMiCqpczLy6Nw==",
+      "type": "package",
+      "path": "PCLWebUtility/1.0.3",
+      "files": [
+        "Lib/native/PCLWebUtility.dll",
+        "Lib/portable-net4+sl4+wp7+win8/PCLWebUtility.dll",
+        "PCLWebUtility.1.0.3.nupkg.sha512",
+        "PCLWebUtility.nuspec"
       ]
     },
     "runtime.native.System/4.0.0": {
@@ -2469,14 +2484,17 @@
     ".NETFramework,Version=v3.5": [
       "System",
       "System.Core",
+      "System.Web",
       "mscorlib"
     ],
     ".NETFramework,Version=v4.0": [
       "System",
       "System.Core",
+      "System.Web",
       "mscorlib"
     ],
     ".NETPortable,Version=v4.0,Profile=Profile328": [
+      "PCLWebUtility >= 1.0.3",
       "System",
       "System.Core",
       "mscorlib"

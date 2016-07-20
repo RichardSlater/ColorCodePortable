@@ -82,8 +82,8 @@ namespace ColorCode.Compilation
 
         private static RegexOptions Compiled()
         {
-            var compiledOption = Enum.Parse<Re(typeof(RegexOptions), "Compiled", ignoreCase: false);
-            return compiledOption ?? RegexOptions.None;
+            // TODO: Update to add support for Compiled
+            return RegexOptions.None;
         }
 
         private static CompiledLanguage CompileLanguage(ILanguage language)
