@@ -298,7 +298,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ColorCode\ColorCode.csproj">
+    <ProjectReference Include="..\ColorCode\ColorCode.xproj">
       <Project>{dc3df40c-0423-415b-8d29-ad2ae062c34d}</Project>
       <Name>ColorCode</Name>
     </ProjectReference>

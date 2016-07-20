@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DC3DF40C-0423-415B-8D29-AD2AE062C34D}</ProjectGuid>
+    <RootNamespace>ColorCode</RootNamespace>
+    <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
+    <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProduceOutputsOnBuild>True</ProduceOutputsOnBuild>
+    <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CodeColorizer.cs" />
+    <Compile Include="Common\ExtensionMethods.cs" />
+    <Compile Include="Common\Guard.cs" />
+    <Compile Include="Common\ILanguageRepository.cs" />
+    <Compile Include="Common\LanguageId.cs" />
+    <Compile Include="Common\LanguageRepository.cs" />
+    <Compile Include="Common\ScopeName.cs" />
+    <Compile Include="Compilation\CompiledLanguage.cs" />
+    <Compile Include="Compilation\ILanguageCompiler.cs" />
+    <Compile Include="Compilation\LanguageCompiler.cs" />
+    <Compile Include="Compilation\Languages\Asax.cs" />
+    <Compile Include="Compilation\Languages\Ashx.cs" />
+    <Compile Include="Compilation\Languages\Aspx.cs" />
+    <Compile Include="Compilation\Languages\AspxCs.cs" />
+    <Compile Include="Compilation\Languages\AspxVb.cs" />
+    <Compile Include="Compilation\Languages\Cpp.cs" />
+    <Compile Include="Compilation\Languages\CSharp.cs" />
+    <Compile Include="Compilation\Languages\Css.cs" />
+    <Compile Include="Compilation\Languages\FSharp.cs" />
+    <Compile Include="Compilation\Languages\Haskell.cs" />
+    <Compile Include="Compilation\Languages\Html.cs" />
+    <Compile Include="Compilation\Languages\Java.cs" />
+    <Compile Include="Compilation\Languages\JavaScript.cs" />
+    <Compile Include="Compilation\Languages\Koka.cs" />
+    <Compile Include="Compilation\Languages\Markdown.cs" />
+    <Compile Include="Compilation\Languages\Php.cs" />
+    <Compile Include="Compilation\Languages\PowerShell.cs" />
+    <Compile Include="Compilation\Languages\Sql.cs" />
+    <Compile Include="Compilation\Languages\Typescript.cs" />
+    <Compile Include="Compilation\Languages\VbDotNet.cs" />
+    <Compile Include="Compilation\Languages\Xml.cs" />
+    <Compile Include="Compilation\RuleCaptures.cs" />
+    <Compile Include="Compilation\RuleFormats.cs" />
+    <Compile Include="Formatters.cs" />
+    <Compile Include="Formatting\HtmlClassFormatter.cs" />
+    <Compile Include="Formatting\HtmlFormatter.cs" />
+    <Compile Include="Formatting\HttpUtility.cs" />
+    <Compile Include="Formatting\TextInsertion.cs" />
+    <Compile Include="ICodeColorizer.cs" />
+    <Compile Include="IFormatter.cs" />
+    <Compile Include="ILanguage.cs" />
+    <Compile Include="IStyleSheet.cs" />
+    <Compile Include="LanguageRule.cs" />
+    <Compile Include="Languages.cs" />
+    <Compile Include="Parsing\ILanguageParser.cs" />
+    <Compile Include="Parsing\LanguageParser.cs" />
+    <Compile Include="Parsing\Scope.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Style.cs" />
+    <Compile Include="StyleDictionary.cs" />
+    <Compile Include="StyleSheets.cs" />
+    <Compile Include="Styling\Color.cs" />
+    <Compile Include="Styling\StyleSheets\DefaultStyleSheet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\icon.png" />
+    <Content Include="Assets\icon.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ColorCode.nuspec" />
+    <None Include="project.json" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
