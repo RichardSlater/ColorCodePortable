@@ -34,6 +34,7 @@ _ReSharper.ColorCode/
 *.user
 *.userosscache
 *.sln.docstates
+project.lock.json
 
 # Build results
 [Dd]ebug/
