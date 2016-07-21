@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using ColorCode.Common;
 using ColorCode.Styling;
 using Xunit;

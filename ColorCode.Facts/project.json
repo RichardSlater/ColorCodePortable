@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0-*",
+  "dependencies": {
+    "ColorCode": "1.0.0-*",
+    "xunit": "1.7.0.*"
+  },
+  "frameworks": {
+    "net40": {
+      "buildOptions": {
+        "define": [ "NET40" ]
+      },
+      "frameworkAssemblies": {
+        "mscorlib": "",
+        "System": "",
+        "System.Core": "",
+        "System.Web": ""
+      }
+    }
+  }
+}
