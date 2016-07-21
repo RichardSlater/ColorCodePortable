@@ -37,7 +37,7 @@ namespace ColorCode.Formatting
                         sb.Append("&amp;");
                         break;
                     default:
-                        if (text[i] > 159)
+                        if (text[i] == 39 || text[i] > 159)
                         {
                             // decimal numeric entity
                             sb.Append("&#");
