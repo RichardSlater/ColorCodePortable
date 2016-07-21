@@ -37,7 +37,7 @@ namespace ColorCode.Common
             if (color == null)
                 throw new ArgumentException("You may not create a hex string from a null color.");
 
-            return string.IsNullOrWhiteSpace(color.Name) ? $"#{color.R:x2}{color.G:x2}{color.B:x2}".ToUpperInvariant() : color.Name;
+            return string.IsNullOrEmpty(color.Name.Trim()) ? $"#{color.R:x2}{color.G:x2}{color.B:x2}".ToUpperInvariant() : color.Name;
         }
 
         

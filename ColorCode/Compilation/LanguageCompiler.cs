@@ -82,11 +82,7 @@ namespace ColorCode.Compilation
 
         private static RegexOptions Compiled()
         {
-            RegexOptions compiledOption;
-            if (Enum.TryParse("Compiled", out compiledOption))
-            {
-                return compiledOption;
-            }
+            // TODO: Update to add support for Compiled
             return RegexOptions.None;
         }
 

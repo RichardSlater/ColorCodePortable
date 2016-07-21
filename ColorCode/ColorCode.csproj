@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC3DF40C-0423-415B-8D29-AD2AE062C34D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ColorCode</RootNamespace>
+    <AssemblyName>ColorCode</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="ColorCode.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeColorizer.cs" />
+    <Compile Include="Common\ExtensionMethods.cs" />
+    <Compile Include="Common\Guard.cs" />
+    <Compile Include="Common\ILanguageRepository.cs" />
+    <Compile Include="Common\LanguageId.cs" />
+    <Compile Include="Common\LanguageRepository.cs" />
+    <Compile Include="Common\ScopeName.cs" />
+    <Compile Include="Compilation\CompiledLanguage.cs" />
+    <Compile Include="Compilation\ILanguageCompiler.cs" />
+    <Compile Include="Compilation\LanguageCompiler.cs" />
+    <Compile Include="Compilation\Languages\Asax.cs" />
+    <Compile Include="Compilation\Languages\Ashx.cs" />
+    <Compile Include="Compilation\Languages\Aspx.cs" />
+    <Compile Include="Compilation\Languages\AspxCs.cs" />
+    <Compile Include="Compilation\Languages\AspxVb.cs" />
+    <Compile Include="Compilation\Languages\Cpp.cs" />
+    <Compile Include="Compilation\Languages\CSharp.cs" />
+    <Compile Include="Compilation\Languages\Css.cs" />
+    <Compile Include="Compilation\Languages\FSharp.cs" />
+    <Compile Include="Compilation\Languages\Haskell.cs" />
+    <Compile Include="Compilation\Languages\Html.cs" />
+    <Compile Include="Compilation\Languages\Java.cs" />
+    <Compile Include="Compilation\Languages\JavaScript.cs" />
+    <Compile Include="Compilation\Languages\Koka.cs" />
+    <Compile Include="Compilation\Languages\Markdown.cs" />
+    <Compile Include="Compilation\Languages\Php.cs" />
+    <Compile Include="Compilation\Languages\PowerShell.cs" />
+    <Compile Include="Compilation\Languages\Sql.cs" />
+    <Compile Include="Compilation\Languages\Typescript.cs" />
+    <Compile Include="Compilation\Languages\VbDotNet.cs" />
+    <Compile Include="Compilation\Languages\Xml.cs" />
+    <Compile Include="Compilation\RuleCaptures.cs" />
+    <Compile Include="Compilation\RuleFormats.cs" />
+    <Compile Include="Formatters.cs" />
+    <Compile Include="Formatting\HtmlClassFormatter.cs" />
+    <Compile Include="Formatting\HtmlFormatter.cs" />
+    <Compile Include="Formatting\HttpUtility.cs" />
+    <Compile Include="Formatting\TextInsertion.cs" />
+    <Compile Include="ICodeColorizer.cs" />
+    <Compile Include="IFormatter.cs" />
+    <Compile Include="ILanguage.cs" />
+    <Compile Include="IStyleSheet.cs" />
+    <Compile Include="LanguageRule.cs" />
+    <Compile Include="Languages.cs" />
+    <Compile Include="Parsing\ILanguageParser.cs" />
+    <Compile Include="Parsing\LanguageParser.cs" />
+    <Compile Include="Parsing\Scope.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Style.cs" />
+    <Compile Include="StyleDictionary.cs" />
+    <Compile Include="StyleSheets.cs" />
+    <Compile Include="Styling\Color.cs" />
+    <Compile Include="Styling\StyleSheets\DefaultStyleSheet.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>
