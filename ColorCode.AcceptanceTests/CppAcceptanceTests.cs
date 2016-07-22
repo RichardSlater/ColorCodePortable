@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Xunit;
 using Xunit.Extensions;
+using Xunit.Sdk;
 
 namespace ColorCode
 {
@@ -107,7 +108,7 @@ comment line 2
     #region Theory Data
     public class CppKeywordData : DataAttribute
     {
-        public override IEnumerable<object[]> GetData(MethodInfo methodUnderTest, Type[] parameterTypes)
+        public override IEnumerable<object[]> GetData(MethodInfo testMethod)
         {
             var keywordData = new List<object[]>
                                   {

@@ -2,13 +2,12 @@
   "version": "1.0.0-*",
   "dependencies": {
     "ColorCode": "1.0.0-*",
-    "xunit": "1.7.0.*",
-    "xunit.extensions": "1.7.0.*"
+    "xunit":  "2.*" 
   },
   "frameworks": {
-    "net40": {
+    "net45": {
       "buildOptions": {
-        "define": [ "NET40" ],
+        "define": [ "NET45" ],
         "compile": {
           "exclude": [
             "Data"
@@ -19,7 +18,15 @@
         "mscorlib": "",
         "System": "",
         "System.Core": "",
-        "System.Web": ""
+        "System.Web": "",
+        "System.Reflection": {
+          "type": "build",
+          "version": ""
+        },
+        "System.Runtime": {
+          "type": "build",
+          "version": ""
+        }
       }
     }
   }
