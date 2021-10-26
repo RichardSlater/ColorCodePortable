@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using ColorCode.Common;
 using Xunit.Extensions;
+using Xunit.Sdk;
 
 namespace ColorCode
 {
@@ -12,7 +13,7 @@ namespace ColorCode
     {
         readonly Regex sourceFileRegex = new Regex(@"(?i)[a-z]+\.source\.([a-z0-9]+)", RegexOptions.Compiled);
 
-        public override IEnumerable<object[]> GetData(MethodInfo methodUnderTest, Type[] parameterTypes)
+        public override IEnumerable<object[]> GetData(MethodInfo methodUnderTest)
         {
             List<object[]> colorizeData = new List<object[]>();
 

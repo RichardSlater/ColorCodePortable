@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using ColorCode.Common;
-using ColorCode.Parsing;
-using ColorCode.Stubs;
-using ColorCode.Styling;
-using ColorCode.Styling.StyleSheets;
-using Xunit;
-
-namespace ColorCode.Formatting
+﻿namespace ColorCode.Formatting
 {
     public class HtmlFormatter_Class_Facts
     {
