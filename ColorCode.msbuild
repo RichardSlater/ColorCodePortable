@@ -1,8 +1,8 @@
 <Project ToolsVersion="4.0" DefaultTargets="all" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-	<UsingTask AssemblyFile="3rdParty\CodePlex.MSBuildTasks.dll" TaskName="CodePlex.MSBuildTasks.RegexReplace"/>
-	<UsingTask AssemblyFile="3rdParty\CodePlex.MSBuildTasks.dll" TaskName="CodePlex.MSBuildTasks.Zip"/>
-  <UsingTask AssemblyFile="3rdParty\xUnit\xunit.runner.msbuild.dll" TaskName="Xunit.Runner.MSBuild.xunit"/>
+	<UsingTask AssemblyFile="submodules\CodePlex.MSBuildTasks.dll" TaskName="CodePlex.MSBuildTasks.RegexReplace"/>
+	<UsingTask AssemblyFile="submodules\CodePlex.MSBuildTasks.dll" TaskName="CodePlex.MSBuildTasks.Zip"/>
+  <UsingTask AssemblyFile="submodules\xUnit\xunit.runner.msbuild.dll" TaskName="Xunit.Runner.MSBuild.xunit"/>
 
   <PropertyGroup Condition="'$(Configuration)' == ''">
     <Configuration>Debug</Configuration>
