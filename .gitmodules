@@ -1,0 +1,3 @@
+[submodule "ColorCodePortable"]
+	path = ColorCodePortable
+	url = https://github.com/MarkdownServer/ColorCodePortable
