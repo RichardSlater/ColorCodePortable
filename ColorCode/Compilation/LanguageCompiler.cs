@@ -110,7 +110,9 @@ namespace ColorCode.Compilation
             captures = new List<string>();
 
             regexBuilder.AppendLine("(?x)");
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
             captures.Add(null);
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 
             CompileRule(rules[0], regexBuilder, captures, true);
 
@@ -140,7 +142,9 @@ namespace ColorCode.Compilation
 
             for (int i = 0; i <= numberOfCaptures; i++)
             {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string scope = null;
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
                 foreach (int captureIndex in languageRule.Captures.Keys)
                 {
@@ -151,7 +155,9 @@ namespace ColorCode.Compilation
                     }
                 }
 
+#pragma warning disable CS8604 // Possible null reference argument.
                 captures.Add(scope);
+#pragma warning restore CS8604 // Possible null reference argument.
             }
         }
 

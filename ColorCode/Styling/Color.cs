@@ -10,7 +10,9 @@ namespace ColorCode.Styling
         {
         }
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public Color(byte alpha, byte r, byte g, byte b)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             Alpha = alpha;
             R = r;
@@ -331,17 +333,31 @@ namespace ColorCode.Styling
         public override bool Equals(object obj)
         {
             var color = obj as Color;
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+#pragma warning disable CS8604 // Possible null reference argument.
             return color != null && Equals(color);
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
         }
 
         public static bool operator ==(Color left, Color right)
         {
             if ((object) left == null && (object) right == null) return true;
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             if ((object) left == null && right.IsEmpty) return true;
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             if ((object) left != null && left.IsEmpty && (object) right == null) return true;
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             if ((object) left != null && left.IsEmpty && (object) right != null && right.IsEmpty) return true;
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             if ((object) left == null || (object) right == null) return false;
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
             return left.IsEmpty && right.IsEmpty && (left.R == right.R) && (left.G == right.G) && (left.B == right.B);
         }

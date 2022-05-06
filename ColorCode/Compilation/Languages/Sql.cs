@@ -26,7 +26,9 @@ namespace ColorCode.Compilation.Languages
         {
             get
             {
+#pragma warning disable CS8603 // Possible null reference return.
                 return null;
+#pragma warning restore CS8603 // Possible null reference return.
             }
         }
 
@@ -34,6 +36,7 @@ namespace ColorCode.Compilation.Languages
         {
             get
             {
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
                 return new List<LanguageRule>
                            {
                                new LanguageRule(
@@ -87,6 +90,7 @@ namespace ColorCode.Compilation.Languages
                                        }
                                    ),
                            };
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
             }
         }
 

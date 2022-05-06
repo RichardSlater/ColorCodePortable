@@ -24,7 +24,9 @@ namespace ColorCode.Compilation.Languages
 
         public string FirstLinePattern
         {
+#pragma warning disable CS8603 // Possible null reference return.
             get { return null; }
+#pragma warning restore CS8603 // Possible null reference return.
         }
 
         public IList<LanguageRule> Rules

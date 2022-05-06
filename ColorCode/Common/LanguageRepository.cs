@@ -27,7 +27,9 @@ namespace ColorCode.Common
         {
             Guard.ArgNotNullAndNotEmpty(languageId, "languageId");
             
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             ILanguage language = null;
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
             
             loadLock.EnterReadLock();
 

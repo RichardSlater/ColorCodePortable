@@ -34,8 +34,10 @@ namespace ColorCode.Common
             if (color == Color.Empty)
                 throw new ArgumentException("You may not create a hex string from an empty color.");
 
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
             if (color == null)
                 throw new ArgumentException("You may not create a hex string from a null color.");
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 
             return string.IsNullOrWhiteSpace(color.Name) ? $"#{color.R:x2}{color.G:x2}{color.B:x2}".ToUpperInvariant() : color.Name;
         }

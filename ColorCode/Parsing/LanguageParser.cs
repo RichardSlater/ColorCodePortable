@@ -73,7 +73,9 @@ namespace ColorCode.Parsing
             capturedStyles.SortStable((x, y) => x.Index.CompareTo(y.Index));
 
             var capturedStyleTree = new List<Scope>(capturedStyles.Count);
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             Scope currentScope = null;
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
             foreach (Scope capturedStyle in capturedStyles)
             {
@@ -123,8 +125,12 @@ namespace ColorCode.Parsing
                 if (regexGroup.Length > 0 && i < compiledLanguage.Captures.Count) {  //note: i can be >= Captures.Count due to named groups; these do capture a group but always get added after all non-named groups (which is why we do not count them in numberOfCaptures)
                     string styleName = compiledLanguage.Captures[i];
                     if (!String.IsNullOrEmpty(styleName)) {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                         foreach (Capture regexCapture in regexGroup.Captures)
+#pragma warning disable CS8604 // Possible null reference argument.
                             AppendCapturedStylesForRegexCapture(regexCapture, currentIndex, styleName, capturedStyles);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+#pragma warning restore CS8604 // Possible null reference argument.
                     }
                 }
             }
